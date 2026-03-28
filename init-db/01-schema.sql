@@ -150,6 +150,7 @@ CREATE TABLE SERVICEPROVIDER_CULTURE (
 
 """)
 
+
 conn.commit()
 conn.close()
 
