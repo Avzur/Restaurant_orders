@@ -1,0 +1,108 @@
+CREATE TABLE SERVICEPROVIDER
+(
+  ProviderID INT NOT NULL,
+  ProviderName VARCHAR(30) NOT NULL,
+  ServiceType VARCHAR(50) NOT NULL,
+  Phone INT NOT NULL,
+  Address VARCHAR(50) NOT NULL,
+  City VARCHAR(15) NOT NULL,
+  PRIMARY KEY (ProviderID)
+);
+
+CREATE TABLE TOURIST
+(
+  TouristID INT NOT NULL,
+  FirstName VARCHAR(15) NOT NULL,
+  LastName VARCHAR(15) NOT NULL,
+  Phone INT,
+  Email VARCHAR(30) NOT NULL,
+  Country VARCHAR(15) NOT NULL,
+  Password VARCHAR(10) NOT NULL CHECK (LENGTH(Password) >= 4),
+  PRIMARY KEY (TouristID),
+  UNIQUE (Email)
+);
+
+CREATE TABLE RESERVATION
+(
+  ReservationID INT NOT NULL,
+  ReservationDate DATE NOT NULL,
+  NumberOfPeople INT NOT NULL,
+  Status VARCHAR(15) NOT NULL DEFAULT 'Pending' NOT NULL CHECK (Status IN ('Pending', 'Confirmed', 'Cancelled')),
+  ProviderID INT NOT NULL,
+  TouristID INT NOT NULL,
+  PRIMARY KEY (ReservationID),
+  FOREIGN KEY (ProviderID) REFERENCES SERVICEPROVIDER(ProviderID),
+  FOREIGN KEY (TouristID) REFERENCES TOURIST(TouristID)
+);
+
+CREATE TABLE MENUITEM
+(
+  ItemID INT NOT NULL,
+  ItemName VARCHAR(20) NOT NULL,
+  Price INT NOT NULL CHECK (Price >= 0),
+  Category VARCHAR(20) NOT NULL,
+  ProviderID INT NOT NULL,
+  PRIMARY KEY (ItemID, ProviderID),
+  FOREIGN KEY (ProviderID) REFERENCES SERVICEPROVIDER(ProviderID)
+);
+
+CREATE TABLE COUPON
+(
+  CouponID INT NOT NULL,
+  CouponCode VARCHAR(20) NOT NULL,
+  DiscountPercent INT NOT NULL CHECK (DiscountPercent > 0 AND DiscountPercent <= 100),
+  StartDate DATE NOT NULL,
+  EndDate DATE,
+  ProviderID INT NOT NULL,
+  PRIMARY KEY (CouponID),
+  FOREIGN KEY (ProviderID) REFERENCES SERVICEPROVIDER(ProviderID),
+  UNIQUE (CouponCode),
+  CHECK (EndDate >= StartDate)
+);
+
+CREATE TABLE RESTAURANT_TABLE
+(
+  TableNumber INT NOT NULL,
+  Seats INT NOT NULL CHECK (Seats > 0),
+  TableID INT NOT NULL,
+  ProviderID INT NOT NULL,
+  ReservationID INT NOT NULL,
+  PRIMARY KEY (TableID, ProviderID),
+  FOREIGN KEY (ProviderID) REFERENCES SERVICEPROVIDER(ProviderID),
+  FOREIGN KEY (ReservationID) REFERENCES RESERVATION(ReservationID)
+);
+
+CREATE TABLE TOURISTDISCOUNT
+(
+  country VARCHAR(30) NOT NULL,
+  percent INT NOT NULL CHECK (percent > 0 AND percent <= 100),
+  DiscountID INT NOT NULL,
+  PRIMARY KEY (DiscountID)
+);
+
+CREATE TABLE ORDERLINE
+(
+  ItemID INT NOT NULL,
+  ProviderID INT NOT NULL,
+  ReservationID INT NOT NULL,
+  PRIMARY KEY (ItemID, ProviderID, ReservationID),
+  FOREIGN KEY (ItemID, ProviderID) REFERENCES MENUITEM(ItemID, ProviderID),
+  FOREIGN KEY (ReservationID) REFERENCES RESERVATION(ReservationID)
+);
+
+CREATE TABLE INCLUDE
+(
+  CouponID INT NOT NULL,
+  DiscountID INT NOT NULL,
+  PRIMARY KEY (CouponID, DiscountID),
+  FOREIGN KEY (CouponID) REFERENCES COUPON(CouponID),
+  FOREIGN KEY (DiscountID) REFERENCES TOURISTDISCOUNT(DiscountID)
+);
+
+CREATE TABLE TOURIST_LANGUAGE
+(
+  Language VARCHAR(20) NOT NULL,
+  TouristID INT NOT NULL,
+  PRIMARY KEY (Language, TouristID),
+  FOREIGN KEY (TouristID) REFERENCES TOURIST(TouristID)
+);
