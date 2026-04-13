@@ -1,19 +1,25 @@
 import csv
-from random import randint, choice
+import random
 from datetime import date, timedelta
 
+random.seed(42)
+
 # ========================
-# SERVICEPROVIDER
+# SERVICEPROVIDER (1000)
 # ========================
 providers = []
-for i in range(1, 6):
+
+cities = ["Tel Aviv", "Haifa", "Jerusalem", "Eilat", "Ashdod"]
+types = ["Restaurant", "Cafe", "Hotel"]
+
+for i in range(1, 1001):
     providers.append([
         i,
         f"Provider{i}",
-        choice(["Restaurant", "Cafe", "Hotel"]),
+        random.choice(types),
         500000000 + i,
         f"Street {i}",
-        choice(["Tel Aviv", "Haifa", "Jerusalem", "Eilat"])
+        random.choice(cities)
     ])
 
 with open("SERVICEPROVIDER.csv", "w", newline="") as f:
@@ -22,19 +28,20 @@ with open("SERVICEPROVIDER.csv", "w", newline="") as f:
     )
 
 # ========================
-# TOURIST
+# TOURIST (1000)
 # ========================
 countries = ["Israel","USA","France","Germany","Italy","Spain","UK"]
+
 tourists = []
 
-for i in range(1, 11):
+for i in range(1, 1001):
     tourists.append([
         i,
-        f"Name{i}",
+        f"First{i}",
         f"Last{i}",
         500000000 + i,
         f"user{i}@mail.com",
-        choice(countries),
+        random.choice(countries),
         "pass" + str(i)
     ])
 
@@ -44,19 +51,21 @@ with open("TOURIST.csv", "w", newline="") as f:
     )
 
 # ========================
-# RESERVATION
+# RESERVATION (1000)
 # ========================
 reservations = []
-start = date(2025,1,1)
 
-for i in range(1, 11):
+start = date(2025,1,1)
+status_list = ["Pending","Confirmed","Cancelled"]
+
+for i in range(1, 1001):
     reservations.append([
         i,
-        start + timedelta(days=i),
-        randint(1,6),
-        choice(["Pending","Confirmed","Cancelled"]),
-        randint(1,5),
-        randint(1,10)
+        start + timedelta(days=random.randint(0, 365)),
+        random.randint(1, 6),
+        random.choice(status_list),
+        random.randint(1, 1000),
+        random.randint(1, 1000)
     ])
 
 with open("RESERVATION.csv", "w", newline="") as f:
@@ -65,21 +74,21 @@ with open("RESERVATION.csv", "w", newline="") as f:
     )
 
 # ========================
-# MENUITEM
+# MENUITEM (1000)
 # ========================
 menu = []
-item_id = 1
 
-for p in range(1, 6):
-    for _ in range(3):
-        menu.append([
-            item_id,
-            choice(["Burger","Pizza","Salad","Coffee","Tea","Juice"]),
-            randint(10,120),
-            choice(["Food","Drink"]),
-            p
-        ])
-        item_id += 1
+item_names = ["Burger","Pizza","Salad","Coffee","Tea","Juice","Steak","Fish"]
+categories = ["Food","Drink"]
+
+for i in range(1, 1001):
+    menu.append([
+        i,
+        random.choice(item_names),
+        random.randint(10,150),
+        random.choice(categories),
+        random.randint(1, 1000)
+    ])
 
 with open("MENUITEM.csv", "w", newline="") as f:
     csv.writer(f).writerows(
@@ -87,19 +96,21 @@ with open("MENUITEM.csv", "w", newline="") as f:
     )
 
 # ========================
-# COUPON
+# COUPON (1000)
 # ========================
 coupons = []
-for i in range(1,6):
+
+for i in range(1, 1001):
     start_d = date(2025,1,1)
     end_d = date(2025,12,31)
+
     coupons.append([
         i,
-        f"DISC{i*10}",
-        i*5,
+        f"DISC{i}",
+        random.randint(5, 50),
         start_d,
         end_d,
-        randint(1,5)
+        random.randint(1, 1000)
     ])
 
 with open("COUPON.csv", "w", newline="") as f:
@@ -108,17 +119,22 @@ with open("COUPON.csv", "w", newline="") as f:
     )
 
 # ========================
-# TOURIST_LANGUAGE
+# TOURIST_LANGUAGE (1000)
 # ========================
-langs = []
-for i in range(1, 11):
-    for _ in range(randint(1,2)):
-        langs.append([
-            choice(["Hebrew","English","French","German","Spanish","Italian"]),
-            i
+langs = ["Hebrew","English","French","German","Spanish","Italian"]
+
+tourist_lang = []
+
+for i in range(1, 1001):
+    for _ in range(random.randint(1,2)):
+        tourist_lang.append([
+            random.choice(langs),
+            random.randint(1, 1000)
         ])
 
 with open("TOURIST_LANGUAGE.csv", "w", newline="") as f:
     csv.writer(f).writerows(
-        [["Language","TouristID"]] + langs
+        [["Language","TouristID"]] + tourist_lang
     )
+
+print("DONE: 1000 rows generated for each table")
