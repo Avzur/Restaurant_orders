@@ -1,0 +1,6 @@
+ProviderID,ProviderName,ServiceType,Phone,Address,City
+1,Provider1,Cafe,500000001,Street 1,Haifa
+2,Provider2,Cafe,500000002,Street 2,Eilat
+3,Provider3,Hotel,500000003,Street 3,Eilat
+4,Provider4,Restaurant,500000004,Street 4,Tel Aviv
+5,Provider5,Cafe,500000005,Street 5,Tel Aviv

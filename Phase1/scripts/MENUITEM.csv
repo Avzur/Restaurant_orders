@@ -1,0 +1,16 @@
+ItemID,ItemName,Price,Category,ProviderID
+1,Burger,54,Drink,1
+2,Salad,111,Drink,1
+3,Burger,26,Food,1
+4,Pizza,83,Food,2
+5,Pizza,90,Drink,2
+6,Salad,14,Food,2
+7,Burger,71,Drink,3
+8,Burger,104,Food,3
+9,Juice,118,Food,3
+10,Juice,48,Food,4
+11,Salad,58,Drink,4
+12,Juice,55,Food,4
+13,Burger,94,Food,5
+14,Pizza,83,Food,5
+15,Burger,95,Drink,5
