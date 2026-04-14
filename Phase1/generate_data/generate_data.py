@@ -34,7 +34,7 @@ countries = ["Israel","USA","France","Germany","Italy","Spain","UK"]
 
 tourists = []
 
-for i in range(1, 1001):
+for i in range(1, 20001):
     tourists.append([
         i,
         f"First{i}",
@@ -58,7 +58,7 @@ reservations = []
 start = date(2025,1,1)
 status_list = ["Pending","Confirmed","Cancelled"]
 
-for i in range(1, 1001):
+for i in range(1, 20001):
     reservations.append([
         i,
         start + timedelta(days=random.randint(0, 365)),
