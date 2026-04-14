@@ -39,6 +39,12 @@ Avishag Ben Zur and Ayala Ovadya
 <img width="4512" height="2085" alt="ERD" src="https://github.com/user-attachments/assets/ce5cf7b5-ec12-465f-8601-41c1780b8389" />
 <br><br>
 
+### DSD (Data Structure Diagram)]
+<img width="4512" height="2085" alt="DSD1" src="https://github.com/user-attachments/assets/97371415-8765-480d-89e0-43860298848c" />
+<br><br>
+<img width="1257" height="931" alt="DSD2" src="https://github.com/user-attachments/assets/b3ccce7d-bb23-4a06-8490-18be018c3579" />
+<br><br>
+
 ### SQL Scripts
 
 Provide the following SQL scripts:
