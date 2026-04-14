@@ -49,13 +49,13 @@ Provide the following SQL scripts:
 
 * **Insert Data Script** - The SQL script for insert data to the database tables is available in the repository:
 
-  📜 [View `insert_tables.sql`](insertTables.sql)
+  📜 [View `insertTables.sql`](insertTables.sql)
 
 * **Drop Tables Script** - The SQL script for droping all tables is available in the repository:
 
-  📜 [View `drop_tables.sql`](dropTables.sql)
+  📜 [View `dropTables.sql`](dropTables.sql)
 
 * **Select All Data Script** - The SQL script for selectAll tables is available in the repository:
 
-  📜 [View `selectAll_tables.sql`](selectAll.sql)
+  📜 [View `selectAll.sql`](selectAll.sql)
 
