@@ -59,3 +59,19 @@ Provide the following SQL scripts:
 
   📜 [View `selectAll.sql`](selectAll.sql)
 
+  ### Data
+
+First tool: using [mockaro](https://www.mockaroo.com/) to create csv file
+
+Entering a data to RESERVATION table
+
+* reservation id scope 1-1000 📜 [View `RESERVATION_MOCK_DATA.csv`](RESERVATION_MOCK_DATA.csv)
+
+Entering a data to SERVICEPROVIDER table
+
+* Service provider id scope 1-1000 📜 [View `SERVICEPROVIDER_MOCK_DATA.csv`](SERVICEPROVIDER_MOCK_DATA.csv)
+
+Entering a data to TOURISTDISCOUNT table
+
+* tourist id scope 1-1000 📜 [View `TOURISTDISCOUNT_MOCK_DATA.csv`](TOURISTDISCOUNT_MOCK_DATA.csv)
+
