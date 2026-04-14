@@ -39,5 +39,23 @@ Avishag Ben Zur and Ayala Ovadya
 <img width="4512" height="2085" alt="ERD" src="https://github.com/user-attachments/assets/ce5cf7b5-ec12-465f-8601-41c1780b8389" />
 <br><br>
 
+### SQL Scripts
 
+Provide the following SQL scripts:
+
+* **Create Tables Script** - The SQL script for creating the database tables is available in the repository:
+
+  📜 [View `create_tables.sql`](createtables.sql)
+
+* **Insert Data Script** - The SQL script for insert data to the database tables is available in the repository:
+
+  📜 [View `insert_tables.sql`](insertTables.sql)
+
+* **Drop Tables Script** - The SQL script for droping all tables is available in the repository:
+
+  📜 [View `drop_tables.sql`](dropTables.sql)
+
+* **Select All Data Script** - The SQL script for selectAll tables is available in the repository:
+
+  📜 [View `selectAll_tables.sql`](selectAll.sql)
 
