@@ -26,7 +26,10 @@ Selected system: Tourist services - restaurant reservations
 * Making a reservation in real time with immediate confirmation.
 * Table inventory management for the restaurant owner.
 * Obtaining statistics on tourists for the restaurant owner
-  
+
+**Website link**
+https://ai.studio/apps/b2cd3651-0d95-4ace-9c3d-26c037da6b7d
+
 #### System registration side
 <img width="1795" height="942" alt="הרשמה" src="https://github.com/user-attachments/assets/4fe0ed70-f6b3-4c7d-aee2-4744103a5963" />
 <br><br>
