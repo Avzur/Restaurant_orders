@@ -1,5 +1,7 @@
 # Restaurant_orders
 Avishag Ben Zur and Ayala Ovadya
+<br><br>
+Selected system: Tourist services - restaurant reservations
 ## Table of Contents
 * [Phase 1: Design and Build the Database](#phase-1-design-and-build-the-database)
   * [Introduction - Screenshots](#introduction---screenshots)
@@ -13,6 +15,22 @@ Avishag Ben Zur and Ayala Ovadya
 ## Phase 1: Design and Build the Database
 
 ### Introduction - Screenshots
+**DineReserve** system is designed to bridge the gap between tourists and local restaurants. The system allows for dynamic management of table availability, consideration of tourists' culinary preferences, and order history management.
+
+**Main data stored in the system:**
+* **Tourists:** Contact details, preferred language and cultural preferences.
+* **Restaurants:** Location, type of cuisine, operating hours.
+* **Tables:** Capacity and availability status.
+* **Reservations:** Link between a tourist, a table in a restaurant and a specific time.
+
+**Main functionality:**
+* Making a reservation in real time with immediate confirmation.
+* Table inventory management for the restaurant owner.
+* Obtaining statistics on tourists for the restaurant owner
+
+**Website link:**
+https://ai.studio/apps/b2cd3651-0d95-4ace-9c3d-26c037da6b7d
+
 #### System registration side
 <img width="1795" height="942" alt="הרשמה" src="https://github.com/user-attachments/assets/4fe0ed70-f6b3-4c7d-aee2-4744103a5963" />
 <br><br>
