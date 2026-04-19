@@ -9,8 +9,8 @@ Selected system: Tourist services - restaurant reservations
   * [DSD (Data Structure Diagram)](#dsd-data-structure-diagram)
   * [SQL Scripts](#sql-scripts)
   * [Data](#data)
+  * [Python code](#Python-code)
   * [Backup](#backup)
-* [Phase 2: Integration](#phase-2-integration)
 
 ## Phase 1: Design and Build the Database
 
@@ -65,8 +65,6 @@ https://ai.studio/apps/b2cd3651-0d95-4ace-9c3d-26c037da6b7d
 
 ### SQL Scripts
 
-Provide the following SQL scripts:
-
 * **Create Tables Script** - The SQL script for creating the database tables is available in the repository:
 
   📜 [View `create_tables.sql`](Phase1/scripts/createtables.sql)
@@ -83,19 +81,33 @@ Provide the following SQL scripts:
 
   📜 [View `selectAll.sql`](Phase1/scripts/selectAll.sql)
 
-  ### Data
+### Data
 
-First tool: using [mockaro](https://www.mockaroo.com/) to create csv file
+using [mockaro](https://www.mockaroo.com/) to create csv files
 
 Entering a data to RESERVATION table
 
-* reservation id scope 1-1000 📜 [View `RESERVATION_MOCK_DATA.csv`](Phase1/mockData/RESERVATION_MOCK_DATA.csv)
+* 📜 [View `RESERVATION_MOCK_DATA.csv`](Phase1/mockData/RESERVATION_MOCK_DATA.csv)
 
 Entering a data to SERVICEPROVIDER table
 
-* Service provider id scope 1-1000 📜 [View `SERVICEPROVIDER_MOCK_DATA.csv`](Phase1/mockData/SERVICEPROVIDER_MOCK_DATA.csv)
+* 📜 [View `SERVICEPROVIDER_MOCK_DATA.csv`](Phase1/mockData/SERVICEPROVIDER_MOCK_DATA.csv)
 
 Entering a data to TOURISTDISCOUNT table
 
-* tourist id scope 1-1000 📜 [View `TOURISTDISCOUNT_MOCK_DATA.csv`](Phase1/mockData/TOURISTDISCOUNT_MOCK_DATA.csv)
+* 📜 [View `TOURISTDISCOUNT_MOCK_DATA.csv`](Phase1/mockData/TOURISTDISCOUNT_MOCK_DATA.csv)
+
+Example of entering data in the SERVICEPROVIDER table:
+<img width="1862" height="718" alt="SERVICEPROVIDER" src="https://github.com/user-attachments/assets/8cca9da7-0c48-4fdd-88ff-367b0dbda230" />
+<br><br>
+<img width="870" height="687" alt="צילום מסך 2026-04-14 121427" src="https://github.com/user-attachments/assets/538756a5-4d6f-48a2-9f95-43f294ac7e47" />
+<br><br>
+<img width="873" height="502" alt="צילום מסך 2026-04-14 122340" src="https://github.com/user-attachments/assets/e3f73d15-55cd-4b0a-888c-cb56cfb2c5c4" />
+<br><br>
+<img width="500" height="468" alt="צילום מסך 2026-04-20 025323" src="https://github.com/user-attachments/assets/7ef40bf2-25ba-4ad1-95ce-15d2564680ed" />
+<br><br>
+
+### Python code
+
+* 📜 [View `/generate_data.py`](Phase1/generate_data/generate_data.py)
 
