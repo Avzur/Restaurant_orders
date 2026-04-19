@@ -69,19 +69,19 @@ Provide the following SQL scripts:
 
 * **Create Tables Script** - The SQL script for creating the database tables is available in the repository:
 
-  📜 [View `create_tables.sql`](createtables.sql)
+  📜 [View `create_tables.sql`](Phase1/scripts/createtables.sql)
 
 * **Insert Data Script** - The SQL script for insert data to the database tables is available in the repository:
 
-  📜 [View `insertTables.sql`](insertTables.sql)
+  📜 [View `insertTable.sql`](Phase1/scripts/insertTable.sql)
 
 * **Drop Tables Script** - The SQL script for droping all tables is available in the repository:
 
-  📜 [View `dropTables.sql`](dropTables.sql)
+  📜 [View `dropTables.sql`](Phase1/scripts/dropTables.sql)
 
 * **Select All Data Script** - The SQL script for selectAll tables is available in the repository:
 
-  📜 [View `selectAll.sql`](selectAll.sql)
+  📜 [View `selectAll.sql`](Phase1/scripts/selectAll.sql)
 
   ### Data
 
@@ -89,13 +89,13 @@ First tool: using [mockaro](https://www.mockaroo.com/) to create csv file
 
 Entering a data to RESERVATION table
 
-* reservation id scope 1-1000 📜 [View `RESERVATION_MOCK_DATA.csv`](RESERVATION_MOCK_DATA.csv)
+* reservation id scope 1-1000 📜 [View `RESERVATION_MOCK_DATA.csv`](Phase1/mockData/RESERVATION_MOCK_DATA.csv)
 
 Entering a data to SERVICEPROVIDER table
 
-* Service provider id scope 1-1000 📜 [View `SERVICEPROVIDER_MOCK_DATA.csv`](SERVICEPROVIDER_MOCK_DATA.csv)
+* Service provider id scope 1-1000 📜 [View `SERVICEPROVIDER_MOCK_DATA.csv`](Phase1/mockData/SERVICEPROVIDER_MOCK_DATA.csv)
 
 Entering a data to TOURISTDISCOUNT table
 
-* tourist id scope 1-1000 📜 [View `TOURISTDISCOUNT_MOCK_DATA.csv`](TOURISTDISCOUNT_MOCK_DATA.csv)
+* tourist id scope 1-1000 📜 [View `TOURISTDISCOUNT_MOCK_DATA.csv`](Phase1/mockData/TOURISTDISCOUNT_MOCK_DATA.csv)
 
