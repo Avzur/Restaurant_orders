@@ -110,4 +110,22 @@ Example of entering data in the SERVICEPROVIDER table:
 ### Python code
 
 * 📜 [View `/generate_data.py`](Phase1/generate_data/generate_data.py)
+<img width="1014" height="912" alt="image (1)" src="https://github.com/user-attachments/assets/a9564bce-b0c0-40a1-83ed-fe5b34cec478" />
+<br><br>
+<img width="1073" height="1010" alt="image (3)" src="https://github.com/user-attachments/assets/ed9fc3d3-b1ee-4093-904d-32dca9eea477" />
+<br><br>
+<img width="951" height="1253" alt="image (4)" src="https://github.com/user-attachments/assets/fd07ee1d-1049-4488-aa29-ef3f2b365cd9" />
+<br><br>
+
+### backup
+
+backups files are kept with the date and hour of the backup:
+* 📜 [View `backup.backup-19_4_26`](Phase1/backup/backup.backup-19_4_26)
+<img width="1691" height="748" alt="image" src="https://github.com/user-attachments/assets/97bf4be2-4b1f-41fb-881e-8d4747fbff0b" />
+<br><br>
+<img width="606" height="360" alt="צילום מסך 2026-04-19 2109g09" src="https://github.com/user-attachments/assets/2dc6be70-1f18-4106-bad8-2bc9caf98128" />
+<br><br>
+
+
+
 
