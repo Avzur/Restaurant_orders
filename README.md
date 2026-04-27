@@ -151,8 +151,23 @@ backups files are kept with the date and hour of the backup:
 יעילות: שיטת ה-IN יעילה יותר. היא חוסכת מראש למערכת את כוח העיבוד המיותר שנדרש כדי ליצור כפילויות בזיכרון ואז לסנן אותן
 <br><br>
 
-**2.** 
+**2.** השאילתה מאתרת ומציגה את פרטי המסעדה (שם המסעדה, כתובת ועיר) שבה ביצע הזמנה תייר ספציפי (העונה לשם "First80"), יחד עם השם שלו. כדי להביא את כל הנתונים הללו, השאילתה מבצעת חיתוך וחיבור בין 3 טבלאות שונות בבסיס הנתונים: תיירים, הזמנות וספקי שירות.
+<img width="707" height="191" alt="שאילתה21" src="https://github.com/user-attachments/assets/7f36fa90-0175-4d49-945c-08c4106aa10a" />
+<br><br>
+<img width="608" height="61" alt="21" src="https://github.com/user-attachments/assets/e098caf2-d74c-488f-971f-d0d503d7a067" />
+<br><br>
+<img width="667" height="211" alt="שאילתה22" src="https://github.com/user-attachments/assets/7528fe87-f741-4385-82a2-e7b0b302bbca" />
+<br><br>
+<img width="626" height="68" alt="22" src="https://github.com/user-attachments/assets/938e374e-a81c-410c-b1df-57913fec15bc" />
+<br><br>
+<img width="1032" height="292" alt="ש2" src="https://github.com/user-attachments/assets/725c4f39-b980-4eb3-abe1-c76cc5e753c1" />
+<br><br>
+ההבדל הלוגי: הבדל של סדר ותחביר בלבד. הצורה הראשונה (JOIN מפורש) מפרידה בצורה מסודרת בין תנאי החיבור של הטבלאות (ON) לבין סינון הנתונים (WHERE). הצורה השנייה מערבבת את שניהם יחד בתוך ה-WHERE.
 
+יעילות: אין שום הבדל ביעילות. מנוע בסיס הנתונים מזהה ששתי השאילתות מבקשות את אותה הפעולה, ובונה עבורן בדיוק את אותה תוכנית הרצה. לכן, זמן הריצה וצריכת המשאבים יהיו זהים לחלוטין.
+<br><br>
+
+**3.** 
 
 
 
