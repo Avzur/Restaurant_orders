@@ -11,6 +11,9 @@ Selected system: Tourist services - restaurant reservations
   * [Data](#data)
   * [Python code](#Python-code)
   * [Backup](#backup)
+* [Phase 2: Queries and constraints](#Phase-2-Queries-and-constraints)
+  * [select queries](#select-queries)
+
 
 ## Phase 1: Design and Build the Database
 
@@ -125,6 +128,29 @@ backups files are kept with the date and hour of the backup:
 <br><br>
 <img width="606" height="360" alt="צילום מסך 2026-04-19 2109g09" src="https://github.com/user-attachments/assets/2dc6be70-1f18-4106-bad8-2bc9caf98128" />
 <br><br>
+
+
+## Phase 2: Queries and constraints
+
+### select queries
+
+1. The query displays the first name, last name, and country of origin of tourists who made any reservations during January 2026. The information is extracted from the tourists table and relies on filtering dates from the reservations table.
+<img width="672" height="272" alt="שאילתה11" src="https://github.com/user-attachments/assets/d5dbbfc8-6be6-4251-b4da-2f08b22fd4b2" />
+<br><br>
+<img width="616" height="62" alt="11" src="https://github.com/user-attachments/assets/51e9d946-ed0c-40d5-8493-be86260392d6" />
+<br><br>
+<img width="657" height="236" alt="שאילתה12" src="https://github.com/user-attachments/assets/06fb7b10-3a62-4940-8054-8c757a0d577b" />
+<br><br>
+<img width="622" height="57" alt="12" src="https://github.com/user-attachments/assets/08b5e998-5678-43c3-8413-dc5e8fc314d9" />
+<br><br>
+<img width="1027" height="293" alt="ש1" src="https://github.com/user-attachments/assets/84e8d180-4b43-43db-ae0c-4333b027de28" />
+<br><br>
+
+
+
+
+
+
 
 
 
