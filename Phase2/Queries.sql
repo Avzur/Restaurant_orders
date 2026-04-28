@@ -140,3 +140,44 @@ JOIN SERVICEPROVIDER sp ON m.ProviderID = sp.ProviderID
 WHERE m.Category = 'Drink'
 AND sp.City = 'Jerusalem'
 ORDER BY sp.ProviderName ASC;
+
+
+--2.  עדכון תאריך הסיום של הקופונים ששייכים לתיירים מארץ "USA"
+UPDATE COUPON c
+SET EndDate = '2026-3-31'
+WHERE EXISTS (
+    SELECT 1
+    FROM ORDERLINE ol
+    JOIN RESERVATION r ON ol.ReservationID = r.ReservationID
+    JOIN TOURIST t ON r.TouristID = t.TouristID
+    WHERE t.Country = 'USA'
+      AND ol.ProviderID = c.ProviderID
+)
+
+
+SELECT DISTINCT c.CouponID, c.CouponCode, c.EndDate, t.Country
+FROM COUPON c
+JOIN ORDERLINE ol ON c.ProviderID = ol.ProviderID
+JOIN RESERVATION r ON ol.ReservationID = r.ReservationID
+JOIN TOURIST t ON r.TouristID = t.TouristID
+WHERE t.Country = 'USA'
+ORDER BY c.CouponID ASC;
+
+
+--3. עדכון "סטטוס" ההזמנה ל-"Cancelled" עבור הזמנות שבהן מספר האנשים גדול מ-5, וההזמנה שייכת (ServiceType) למסעדה מסוג "Hotel"
+UPDATE RESERVATION r
+SET Status = 'Cancelled'
+WHERE r.NumberOfPeople > 5
+  AND r.ProviderID IN (
+      SELECT sp.ProviderID
+      FROM SERVICEPROVIDER sp
+      WHERE sp.ServiceType = 'Hotel'
+  )
+
+
+SELECT r.ReservationID, r.NumberOfPeople, r.Status, sp.ServiceType
+FROM RESERVATION r
+JOIN SERVICEPROVIDER sp ON r.ProviderID = sp.ProviderID
+WHERE r.NumberOfPeople > 5
+  AND sp.ServiceType = 'Hotel'
+ORDER BY reservationid ASC
