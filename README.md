@@ -243,7 +243,15 @@ backups files are kept with the date and hour of the backup:
 <img width="1033" height="283" alt="ע2222" src="https://github.com/user-attachments/assets/27c8db52-4535-4716-815d-47087192b27c" />
 <br><br>
 
-**3.** 
+**3.** עדכון "סטטוס" ההזמנה ל-"Cancelled" עבור הזמנות שבהן מספר האנשים גדול מ-5, וההזמנה שייכת (ServiceType) למסעדה מסוג "Hotel" 
+<img width="423" height="62" alt="ע33" src="https://github.com/user-attachments/assets/d225c170-3e88-42b3-a29c-0506e7d75eaf" />
+<br><br>
+<img width="1031" height="287" alt="ע3" src="https://github.com/user-attachments/assets/e93bdde8-3aaa-419b-9269-4a1be61c92ea" />
+<br><br>
+<img width="567" height="206" alt="ע333" src="https://github.com/user-attachments/assets/2c4372a7-a392-4e56-b0e3-7852c6d1770f" />
+<br><br>
+<img width="1030" height="290" alt="ע3333" src="https://github.com/user-attachments/assets/671db380-08db-40b6-84da-832c3ef78f9d" />
+
 
 
 
