@@ -168,12 +168,69 @@ backups files are kept with the date and hour of the backup:
 <br><br>
 
 **3.** 
+<img width="1177" height="266" alt="שאילתה41" src="https://github.com/user-attachments/assets/afefe569-8105-473c-9f18-55ca830ea2c2" />
+<br><br>
+<img width="622" height="66" alt="41" src="https://github.com/user-attachments/assets/a1032086-38af-48fa-aaca-2c2109162607" />
+<br><br>
+<img width="1160" height="392" alt="שאילתה42" src="https://github.com/user-attachments/assets/45f4c465-5b22-459e-a313-525165d600d6" />
+<br><br>
+<img width="622" height="78" alt="42" src="https://github.com/user-attachments/assets/121e8675-3ce1-4af7-90c0-11d9bc9401ab" />
+<br><br>
+<img width="1036" height="237" alt="ש4" src="https://github.com/user-attachments/assets/b80a53fd-7d3d-409b-9df2-fdcb3ae0016f" />
+<br><br>
 
+**4.**
+<img width="822" height="268" alt="שאילתה81" src="https://github.com/user-attachments/assets/531a0b24-9f74-414f-83a6-cec747d87235" />
+<br><br>
+<img width="612" height="68" alt="81" src="https://github.com/user-attachments/assets/8b1a897a-96cc-4738-9312-346afd78c1f7" />
+<br><br>
+<img width="941" height="230" alt="שאילתה82" src="https://github.com/user-attachments/assets/ab307995-3339-4c2b-bf71-5359de516062" />
+<br><br>
+<img width="612" height="67" alt="82" src="https://github.com/user-attachments/assets/19a98ca2-c809-49bd-bb07-04a92c869568" />
+<br><br>
+<img width="808" height="221" alt="ש8" src="https://github.com/user-attachments/assets/6570c87d-67bb-4da6-99c0-14b79d9f46e0" />
+<br><br>
 
+**5.** 
+<img width="637" height="217" alt="שאילתה3" src="https://github.com/user-attachments/assets/e0d7001f-1c2d-4743-ba7d-79deb9766ceb" />
+<br><br>
+<img width="637" height="67" alt="30" src="https://github.com/user-attachments/assets/833a3c76-feb5-43e0-aa51-64965efe95f9" />
+<br><br>
+<img width="1037" height="291" alt="ש3" src="https://github.com/user-attachments/assets/96c5c1d6-f228-4ade-a6e1-b977711fb3fb" />
+<br><br>
 
+**6.**
+<img width="783" height="247" alt="שאילתה5" src="https://github.com/user-attachments/assets/bd5e4536-2e2d-4d0f-8df2-cfc719ceae9e" />
+<br><br>
+<img width="643" height="63" alt="50" src="https://github.com/user-attachments/assets/127a8aa7-c9d1-4a50-9d32-8050a6b80ec6" />
+<br><br>
+<img width="1037" height="286" alt="ש5" src="https://github.com/user-attachments/assets/e07991dc-0ebc-49e2-b189-21075b5b17be" />
 
+**7.**
+<img width="932" height="275" alt="שאילתה6" src="https://github.com/user-attachments/assets/a3d88d8a-31fd-40b0-9cd4-550778c39821" />
+<br><br>
+<img width="611" height="67" alt="60" src="https://github.com/user-attachments/assets/d232a0c2-3452-4d81-ad69-3311e90d9314" />
+<br><br>
+<img width="1032" height="233" alt="ש6" src="https://github.com/user-attachments/assets/175ce1f2-f294-481f-83dd-98b723e69ac8" />
+<br><br>
 
+**8.** 
+<img width="777" height="292" alt="שאילתה7" src="https://github.com/user-attachments/assets/711f2f14-339e-434a-95fa-7d3f4152f4b1" />
+<br><br>
+<img width="612" height="68" alt="70" src="https://github.com/user-attachments/assets/100a6aec-a1d2-4a55-a488-d6023b425b84" />
+<br><br>
+<img width="1031" height="287" alt="ש7" src="https://github.com/user-attachments/assets/e4121d56-a2f7-4958-bdd2-a9309ed96022" />
+<br><br>
 
+### update queries
+
+**1.** העלאת המחיר של כל המנות (ב-10%) השייכות לקטגוריה "Drink", אבל רק במסעדות שנמצאות בעיר ספציפית "Jerusalem"
+<img width="422" height="68" alt="ע1" src="https://github.com/user-attachments/assets/fc588150-4c70-4ef2-85d7-190c751c5b9b" />
+<br><br>
+<img width="1032" height="287" alt="ע11" src="https://github.com/user-attachments/assets/59152914-117b-4faa-a740-b68243025ad6" />
+<br><br>
+<img width="1033" height="287" alt="ע12" src="https://github.com/user-attachments/assets/22ea5e2e-ba40-46af-95f3-9e0fa8bae16d" />
+<br><br>
 
 
 
