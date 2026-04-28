@@ -4,31 +4,39 @@
 
 BEGIN;
 
--- בדיקה לפני
-SELECT *
-FROM MENUITEM
-WHERE Category = 'Drink'
-LIMIT 5;
+-- בדיקה לפני שינוי: הזמנות למסעדת Provider1
+SELECT r.ReservationID, r.Status, r.NumberOfPeople
+FROM RESERVATION r
+JOIN SERVICEPROVIDER sp ON r.ProviderID = sp.ProviderID
+WHERE sp.ProviderName = 'Provider1'
+LIMIT 10;
 
--- עדכון
-UPDATE MENUITEM
-SET Price = Price + 5
-WHERE Category = 'Drink';
+-- עדכון זמני: סימון הזמנות למסעדה כ-Confirmed → Cancelled
+UPDATE RESERVATION
+SET Status = 'Cancelled'
+WHERE ProviderID IN (
+    SELECT ProviderID
+    FROM SERVICEPROVIDER
+    WHERE ProviderName = 'Provider1'
+);
 
 -- בדיקה אחרי עדכון
-SELECT *
-FROM MENUITEM
-WHERE Category = 'Drink'
-LIMIT 5;
+SELECT r.ReservationID, r.Status, r.NumberOfPeople
+FROM RESERVATION r
+JOIN SERVICEPROVIDER sp ON r.ProviderID = sp.ProviderID
+WHERE sp.ProviderName = 'Provider1'
+LIMIT 10;
 
--- ביטול
+-- ביטול כל השינויים
 ROLLBACK;
 
--- בדיקה אחרי rollback (אמור לחזור למצב קודם)
-SELECT *
-FROM MENUITEM
-WHERE Category = 'Drink'
-LIMIT 5;
+-- בדיקה אחרי rollback (אמור לחזור למצב המקורי)
+SELECT r.ReservationID, r.Status, r.NumberOfPeople
+FROM RESERVATION r
+JOIN SERVICEPROVIDER sp ON r.ProviderID = sp.ProviderID
+WHERE sp.ProviderName = 'Provider1'
+LIMIT 10;
+
 
 -- =========================
 -- COMMIT EXAMPLE
@@ -36,28 +44,29 @@ LIMIT 5;
 
 BEGIN;
 
--- בדיקה לפני
-SELECT *
+-- בדיקה לפני שינוי: הזמנות גדולות במיוחד
+SELECT ReservationID, NumberOfPeople, Status
 FROM RESERVATION
-WHERE NumberOfPeople > 5
-LIMIT 5;
+WHERE NumberOfPeople > 10
+LIMIT 10;
 
--- עדכון
+-- עדכון קבוע: ביטול הזמנות גדולות מדי (עסקי)
 UPDATE RESERVATION
 SET Status = 'Cancelled'
-WHERE NumberOfPeople > 5;
+WHERE NumberOfPeople > 10
+AND Status = 'Pending';
 
 -- בדיקה אחרי עדכון
-SELECT *
+SELECT ReservationID, NumberOfPeople, Status
 FROM RESERVATION
-WHERE NumberOfPeople > 5
-LIMIT 5;
+WHERE NumberOfPeople > 10
+LIMIT 10;
 
--- שמירה
+-- שמירת השינויים
 COMMIT;
 
--- בדיקה אחרי commit (השינוי נשאר)
-SELECT *
+-- בדיקה אחרי commit (השינוי נשאר קבוע)
+SELECT ReservationID, NumberOfPeople, Status
 FROM RESERVATION
-WHERE NumberOfPeople > 5
-LIMIT 5;
+WHERE NumberOfPeople > 10
+LIMIT 10;
