@@ -14,6 +14,7 @@ Selected system: Tourist services - restaurant reservations
 * [Phase 2: Queries and constraints](#Phase-2-Queries-and-constraints)
   * [select queries](#select-queries)
   * [update queries](#update-queries)
+  * [delete queries](#delete-queries)
 
 
 ## Phase 1: Design and Build the Database
@@ -251,7 +252,24 @@ backups files are kept with the date and hour of the backup:
 <img width="567" height="206" alt="ע333" src="https://github.com/user-attachments/assets/2c4372a7-a392-4e56-b0e3-7852c6d1770f" />
 <br><br>
 <img width="1030" height="290" alt="ע3333" src="https://github.com/user-attachments/assets/671db380-08db-40b6-84da-832c3ef78f9d" />
+<br><br>
 
+### delete queries
+
+**1.** מחיקת רשומות מטבלת "TOURIST" עבור תיירים שמעולם לא ביצעו הזמנה במערכת
+<img width="642" height="212" alt="מ1111" src="https://github.com/user-attachments/assets/9abe9ab7-c189-4819-86da-feb27ed808a2" />
+<br><br>
+<img width="422" height="66" alt="מ11" src="https://github.com/user-attachments/assets/0112a7a1-1e0d-4b7e-8168-87832fd6add4" />
+<br><br>
+<img width="652" height="241" alt="מ111" src="https://github.com/user-attachments/assets/ab1b30bf-d595-43c8-8f54-52767a4b26d3" />
+<br><br>
+<img width="1277" height="287" alt="מ1" src="https://github.com/user-attachments/assets/5ac2e071-ac7f-42fd-a828-5f9c8145624d" />
+<br><br>
+<img width="1235" height="297" alt="מ11111" src="https://github.com/user-attachments/assets/455b6f4a-29b8-415f-ab1e-03175b3e163a" />
+<br><br>
+
+
+**2.** 
 
 
 
