@@ -20,13 +20,10 @@ ALTER COLUMN EndDate SET NOT NULL;
 -- בדיקות (לדו"ח)
 -- =========================================
 
--- ❌ אמור להיכשל (יותר מדי אנשים)
 INSERT INTO RESERVATION VALUES (99999, '2025-01-01', 25, 'Pending', 1, 1);
 
 
--- ❌ אמור להיכשל (טלפון קצר מדי)
 INSERT INTO SERVICEPROVIDER VALUES (9999, 'Test', 'Cafe', 123, 'Addr', 'Tel Aviv');
 
 
--- ❌ אמור להיכשל (EndDate NULL)
 INSERT INTO COUPON VALUES (9999, 'TEST999', 10, '2025-01-01', NULL, 1);
