@@ -13,6 +13,7 @@ Selected system: Tourist services - restaurant reservations
   * [Backup](#backup)
 * [Phase 2: Queries and constraints](#Phase-2-Queries-and-constraints)
   * [select queries](#select-queries)
+  * [update queries](#update-queries)
 
 
 ## Phase 1: Design and Build the Database
@@ -232,6 +233,17 @@ backups files are kept with the date and hour of the backup:
 <img width="1033" height="287" alt="ע12" src="https://github.com/user-attachments/assets/22ea5e2e-ba40-46af-95f3-9e0fa8bae16d" />
 <br><br>
 
+**2.** עדכון תאריך הסיום של הקופונים ששייכים לתיירים מארץ "USA"
+<img width="423" height="68" alt="ע22" src="https://github.com/user-attachments/assets/ecd59032-4c74-4bfa-a01f-b766fc44f204" />
+<br><br>
+<img width="1032" height="287" alt="ע2" src="https://github.com/user-attachments/assets/0a43112d-a8a4-43f1-a3c4-ccbde5dcdc70" />
+<br><br>
+<img width="617" height="211" alt="ע222" src="https://github.com/user-attachments/assets/79cae77c-8b6c-4b2e-80fa-cb6d9b91c324" />
+<br><br>
+<img width="1033" height="283" alt="ע2222" src="https://github.com/user-attachments/assets/27c8db52-4535-4716-815d-47087192b27c" />
+<br><br>
+
+**3.** 
 
 
 
