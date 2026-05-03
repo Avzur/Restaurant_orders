@@ -10,11 +10,15 @@ Selected system: Tourist services - restaurant reservations
   * [SQL Scripts](#sql-scripts)
   * [Data](#data)
   * [Python code](#Python-code)
-  * [Backup](#backup)
+  * [Backup1](#backup1)
 * [Phase 2: Queries and constraints](#Phase-2-Queries-and-constraints)
   * [select queries](#select-queries)
   * [update queries](#update-queries)
   * [delete queries](#delete-queries)
+  * [Constraints](Constraints)
+  * [RollbackCommit](RollbackCommit)
+  * [backup2](backup2)
+  * [Index](Index)
 
 
 ## Phase 1: Design and Build the Database
@@ -122,7 +126,7 @@ Example of entering data in the SERVICEPROVIDER table:
 <img width="951" height="1253" alt="image (4)" src="https://github.com/user-attachments/assets/fd07ee1d-1049-4488-aa29-ef3f2b365cd9" />
 <br><br>
 
-### backup
+### backup1
 
 backups files are kept with the date and hour of the backup:
 * 📜 [View `backup.backup-19_4_26`](Phase1/backup/backup.backup-19_4_26)
@@ -298,4 +302,15 @@ backups files are kept with the date and hour of the backup:
 <img width="890" height="280" alt="333333" src="https://github.com/user-attachments/assets/ea1424e7-8875-44d6-bd34-9e1ca9c71a74" />
 <br><br>
 
+
+### Constraints
+
+
+### RollbackCommit
+
+
+### backup2
+
+
+### Index
 
