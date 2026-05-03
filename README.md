@@ -263,8 +263,6 @@ backups files are kept with the date and hour of the backup:
 ### delete queries
 
 **1.** מחיקת רשומות מטבלת "TOURIST" עבור תיירים שמעולם לא ביצעו הזמנה במערכת
-<img width="542" height="240" alt="11" src="https://github.com/user-attachments/assets/38b3a289-1ba6-4f6e-9a30-3f66e3e35aae" />
-<br><br>
 <img width="642" height="212" alt="מ1111" src="https://github.com/user-attachments/assets/9abe9ab7-c189-4819-86da-feb27ed808a2" />
 <br><br>
 <img width="422" height="66" alt="מ11" src="https://github.com/user-attachments/assets/0112a7a1-1e0d-4b7e-8168-87832fd6add4" />
@@ -278,8 +276,26 @@ backups files are kept with the date and hour of the backup:
 
 
 **2.** מחיקת קופונים מטבלת COUPON שתאריך הסיום שלהם קטן מתאריך ושעת המערכת הנוכחיים
+<img width="928" height="213" alt="22222" src="https://github.com/user-attachments/assets/d9b4420d-ea94-4b39-be79-65b4b66f40c3" />
+<br><br>
+<img width="417" height="67" alt="222" src="https://github.com/user-attachments/assets/96eea133-046c-4193-b9ed-3a12ecbfbe8a" />
+<br><br>
+<img width="1032" height="286" alt="22" src="https://github.com/user-attachments/assets/82b366cc-bae0-4c4d-980d-94214e055790" />
+<br><br>
+<img width="932" height="263" alt="2222" src="https://github.com/user-attachments/assets/c62fa015-e277-49d5-87f6-fb80fb89a508" />
+<br><br>
+
 
 **3.** מחיקת כל מנות מהתפריט שהמחיר שלהם קטן מ-15, ושייכים למסעדות שנמצאות בחיפה
-
+<img width="1047" height="440" alt="33333" src="https://github.com/user-attachments/assets/8634e6b0-7654-4b85-9320-64e89f9281c1" />
+<br><br>
+<img width="427" height="65" alt="333" src="https://github.com/user-attachments/assets/2477ff07-e8e5-4405-ac24-7bb17b269077" />
+<br><br>
+<img width="531" height="206" alt="3333" src="https://github.com/user-attachments/assets/e454dcbb-2b74-4449-8c6a-0bc3583dbc9b" />
+<br><br>
+<img width="1037" height="283" alt="33" src="https://github.com/user-attachments/assets/50e3898e-9629-428d-8f73-c7460114b937" />
+<br><br>
+<img width="890" height="280" alt="333333" src="https://github.com/user-attachments/assets/ea1424e7-8875-44d6-bd34-9e1ca9c71a74" />
+<br><br>
 
 
