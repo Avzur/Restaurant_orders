@@ -137,7 +137,7 @@ backups files are kept with the date and hour of the backup:
 
 ### select queries
 
-**1.** השאילתה מציגה את השם הפרטי, שם המשפחה ומדינת המוצא של תיירים שביצעו הזמנה כלשהי במהלך חודש ינואר של שנת 2026. המידע נשלף מטבלת התיירים ומסתמך על סינון תאריכים מתוך טבלת ההזמנות.
+**1.** (שתי דרכים) תציג את שם התייר, שם המשפחה, מדינת המוצא שלו – עבור תיירים שעשו הזמנה בחודש ינואר בשנת 2026
 <img width="672" height="272" alt="שאילתה11" src="https://github.com/user-attachments/assets/d5dbbfc8-6be6-4251-b4da-2f08b22fd4b2" />
 <br><br>
 <img width="616" height="62" alt="11" src="https://github.com/user-attachments/assets/51e9d946-ed0c-40d5-8493-be86260392d6" />
@@ -153,7 +153,7 @@ backups files are kept with the date and hour of the backup:
 יעילות: שיטת ה-IN יעילה יותר. היא חוסכת מראש למערכת את כוח העיבוד המיותר שנדרש כדי ליצור כפילויות בזיכרון ואז לסנן אותן
 <br><br>
 
-**2.** השאילתה מאתרת ומציגה את פרטי המסעדה (שם המסעדה, כתובת ועיר) שבה ביצע הזמנה תייר ספציפי (העונה לשם "First80"), יחד עם השם שלו. כדי להביא את כל הנתונים הללו, השאילתה מבצעת חיתוך וחיבור בין 3 טבלאות שונות בבסיס הנתונים: תיירים, הזמנות וספקי שירות.
+**2.** (שתי דרכים) תציג את שם התייר, כתובת המסעדה, עיר המסעדה ושם המסעדה שעבורה תייר בשם "First80" ביצע הזמנה
 <img width="707" height="191" alt="שאילתה21" src="https://github.com/user-attachments/assets/7f36fa90-0175-4d49-945c-08c4106aa10a" />
 <br><br>
 <img width="608" height="61" alt="21" src="https://github.com/user-attachments/assets/e098caf2-d74c-488f-971f-d0d503d7a067" />
@@ -169,7 +169,7 @@ backups files are kept with the date and hour of the backup:
 יעילות: אין שום הבדל ביעילות. מנוע בסיס הנתונים מזהה ששתי השאילתות מבקשות את אותה הפעולה, ובונה עבורן בדיוק את אותה תוכנית הרצה. לכן, זמן הריצה וצריכת המשאבים יהיו זהים לחלוטין.
 <br><br>
 
-**3.** 
+**3.** (שתי דרכים) תציג את שם המסעדה, שם המנה, כמות הפעמים שהיא הוזמנה, והמחיר הכולל שלה עבור המנה שנקנתה הכי הרבה פעמים במסעדה מסויימת
 <img width="1177" height="266" alt="שאילתה41" src="https://github.com/user-attachments/assets/afefe569-8105-473c-9f18-55ca830ea2c2" />
 <br><br>
 <img width="622" height="66" alt="41" src="https://github.com/user-attachments/assets/a1032086-38af-48fa-aaca-2c2109162607" />
@@ -181,7 +181,7 @@ backups files are kept with the date and hour of the backup:
 <img width="1036" height="237" alt="ש4" src="https://github.com/user-attachments/assets/b80a53fd-7d3d-409b-9df2-fdcb3ae0016f" />
 <br><br>
 
-**4.**
+**4.** (שתי דרכים) תציג את שם המסעדה, שם המנה והמחיר שלה, עבור מנות שלא מופיעות באף הזמנה
 <img width="822" height="268" alt="שאילתה81" src="https://github.com/user-attachments/assets/531a0b24-9f74-414f-83a6-cec747d87235" />
 <br><br>
 <img width="612" height="68" alt="81" src="https://github.com/user-attachments/assets/8b1a897a-96cc-4738-9312-346afd78c1f7" />
@@ -193,7 +193,7 @@ backups files are kept with the date and hour of the backup:
 <img width="808" height="221" alt="ש8" src="https://github.com/user-attachments/assets/6570c87d-67bb-4da6-99c0-14b79d9f46e0" />
 <br><br>
 
-**5.** 
+**5.** תציג את שמות ומחירי התפריטים של מסעדות שסוג השירות שלהם הוא "קפה" בסדר עולה של השמות
 <img width="637" height="217" alt="שאילתה3" src="https://github.com/user-attachments/assets/e0d7001f-1c2d-4743-ba7d-79deb9766ceb" />
 <br><br>
 <img width="637" height="67" alt="30" src="https://github.com/user-attachments/assets/833a3c76-feb5-43e0-aa51-64965efe95f9" />
@@ -201,14 +201,14 @@ backups files are kept with the date and hour of the backup:
 <img width="1037" height="291" alt="ש3" src="https://github.com/user-attachments/assets/96c5c1d6-f228-4ade-a6e1-b977711fb3fb" />
 <br><br>
 
-**6.**
+**6.** תציג את שם התייר, מדינת המוצא ומספר השפות שהוא דובר, רק עבור תיירים שמדברים לפחות 2 שפות ושיש להם הזמנות במערכת
 <img width="783" height="247" alt="שאילתה5" src="https://github.com/user-attachments/assets/bd5e4536-2e2d-4d0f-8df2-cfc719ceae9e" />
 <br><br>
 <img width="643" height="63" alt="50" src="https://github.com/user-attachments/assets/127a8aa7-c9d1-4a50-9d32-8050a6b80ec6" />
 <br><br>
 <img width="1037" height="286" alt="ש5" src="https://github.com/user-attachments/assets/e07991dc-0ebc-49e2-b189-21075b5b17be" />
 
-**7.**
+**7.** תציג את קודי הקופונים, אחוז ההנחה ותאריך הסיום ששייכים למסעדה "Provider2" ולתיירים מארץ "France"
 <img width="932" height="275" alt="שאילתה6" src="https://github.com/user-attachments/assets/a3d88d8a-31fd-40b0-9cd4-550778c39821" />
 <br><br>
 <img width="611" height="67" alt="60" src="https://github.com/user-attachments/assets/d232a0c2-3452-4d81-ad69-3311e90d9314" />
@@ -216,7 +216,7 @@ backups files are kept with the date and hour of the backup:
 <img width="1032" height="233" alt="ש6" src="https://github.com/user-attachments/assets/175ce1f2-f294-481f-83dd-98b723e69ac8" />
 <br><br>
 
-**8.** 
+**8.** תציג את מספר ההזמנה, שם התייר המזמין, תאריך ההזמנה המלא למסעדת "Provider1", עבור הזמנות שבוצעו ברבעון האחרון של שנת 2025 
 <img width="777" height="292" alt="שאילתה7" src="https://github.com/user-attachments/assets/711f2f14-339e-434a-95fa-7d3f4152f4b1" />
 <br><br>
 <img width="612" height="68" alt="70" src="https://github.com/user-attachments/assets/100a6aec-a1d2-4a55-a488-d6023b425b84" />
