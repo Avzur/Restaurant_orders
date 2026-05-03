@@ -17,8 +17,8 @@ Selected system: Tourist services - restaurant reservations
   * [delete queries](#delete-queries)
   * [Constraints](Constraints)
   * [RollbackCommit](RollbackCommit)
-  * [backup2](backup2)
   * [Index](Index)
+  * [backup2](backup2)
 
 
 ## Phase 1: Design and Build the Database
@@ -309,8 +309,8 @@ backups files are kept with the date and hour of the backup:
 ### RollbackCommit
 
 
-### backup2
-
-
 ### Index
+
+
+### backup2
 
