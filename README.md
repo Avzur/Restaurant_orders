@@ -227,6 +227,8 @@ backups files are kept with the date and hour of the backup:
 ### update queries
 
 **1.** העלאת המחיר של כל המנות (ב-10%) השייכות לקטגוריה "Drink", אבל רק במסעדות שנמצאות בעיר ספציפית "Jerusalem"
+<img width="480" height="246" alt="11" src="https://github.com/user-attachments/assets/0d76295d-1cbe-43f4-89c5-7e7634c811f4" />
+<br><br>
 <img width="422" height="68" alt="ע1" src="https://github.com/user-attachments/assets/fc588150-4c70-4ef2-85d7-190c751c5b9b" />
 <br><br>
 <img width="1032" height="287" alt="ע11" src="https://github.com/user-attachments/assets/59152914-117b-4faa-a740-b68243025ad6" />
@@ -235,6 +237,8 @@ backups files are kept with the date and hour of the backup:
 <br><br>
 
 **2.** עדכון תאריך הסיום של הקופונים ששייכים לתיירים מארץ "USA"
+<img width="782" height="333" alt="22" src="https://github.com/user-attachments/assets/a5a375dd-2ddc-4e44-beae-78f4304dd7db" />
+<br><br>
 <img width="423" height="68" alt="ע22" src="https://github.com/user-attachments/assets/ecd59032-4c74-4bfa-a01f-b766fc44f204" />
 <br><br>
 <img width="1032" height="287" alt="ע2" src="https://github.com/user-attachments/assets/0a43112d-a8a4-43f1-a3c4-ccbde5dcdc70" />
@@ -245,6 +249,8 @@ backups files are kept with the date and hour of the backup:
 <br><br>
 
 **3.** עדכון "סטטוס" ההזמנה ל-"Cancelled" עבור הזמנות שבהן מספר האנשים גדול מ-5, וההזמנה שייכת (ServiceType) למסעדה מסוג "Hotel" 
+<img width="593" height="316" alt="33" src="https://github.com/user-attachments/assets/916b103e-39b4-493b-bfc7-f6b51cb91ece" />
+<br><br>
 <img width="423" height="62" alt="ע33" src="https://github.com/user-attachments/assets/d225c170-3e88-42b3-a29c-0506e7d75eaf" />
 <br><br>
 <img width="1031" height="287" alt="ע3" src="https://github.com/user-attachments/assets/e93bdde8-3aaa-419b-9269-4a1be61c92ea" />
@@ -257,6 +263,8 @@ backups files are kept with the date and hour of the backup:
 ### delete queries
 
 **1.** מחיקת רשומות מטבלת "TOURIST" עבור תיירים שמעולם לא ביצעו הזמנה במערכת
+<img width="542" height="240" alt="11" src="https://github.com/user-attachments/assets/38b3a289-1ba6-4f6e-9a30-3f66e3e35aae" />
+<br><br>
 <img width="642" height="212" alt="מ1111" src="https://github.com/user-attachments/assets/9abe9ab7-c189-4819-86da-feb27ed808a2" />
 <br><br>
 <img width="422" height="66" alt="מ11" src="https://github.com/user-attachments/assets/0112a7a1-1e0d-4b7e-8168-87832fd6add4" />
@@ -269,7 +277,9 @@ backups files are kept with the date and hour of the backup:
 <br><br>
 
 
-**2.** 
+**2.** מחיקת קופונים מטבלת COUPON שתאריך הסיום שלהם קטן מתאריך ושעת המערכת הנוכחיים
+
+**3.** מחיקת כל מנות מהתפריט שהמחיר שלהם קטן מ-15, ושייכים למסעדות שנמצאות בחיפה
 
 
 
