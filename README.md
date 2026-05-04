@@ -15,10 +15,10 @@ Selected system: Tourist services - restaurant reservations
   * [select queries](#select-queries)
   * [update queries](#update-queries)
   * [delete queries](#delete-queries)
-  * [Constraints](Constraints)
-  * [RollbackCommit](RollbackCommit)
-  * [Index](Index)
-  * [backup2](backup2)
+  * [Constraints](#Constraints)
+  * [RollbackCommit](#RollbackCommit)
+  * [Index](#Index)
+  * [backup2](#backup2)
 
 
 ## Phase 1: Design and Build the Database
@@ -305,12 +305,75 @@ backups files are kept with the date and hour of the backup:
 
 ### Constraints
 
+**1.** האילוץ קובע שאי אפשר להכניס להזמנה יותר מ-20 אנשים, והוא חוסם אוטומטית כל רישום של מספר גבוה יותר
+<img width="1021" height="711" alt="11" src="https://github.com/user-attachments/assets/3d0b1330-82f3-46e5-9cd8-43b61c6079ca" />
+<br><br>
+
+**2.** האילוץ מוודא שמספרי הטלפון בטבלה יהיו באורך תקין, והוא חוסם הכנסה של מספרים קצרים מדי (כמו 050995)
+<img width="1057" height="701" alt="22" src="https://github.com/user-attachments/assets/81ec7cea-ea66-4ee6-9f6b-f1a995c9cc42" />
+<br><br>
+
+**3.** האילוץ על עמודת תאריך הסיום הופך אותה לשדה חובה, והוא מונע מצב שבו מכניסים קופון למערכת בלי לציין מתי הוא מסתיים
+<img width="1061" height="712" alt="33" src="https://github.com/user-attachments/assets/35d70892-c217-47f7-830a-a02f8b718ff8" />
+<br><br>
+
 
 ### RollbackCommit
 
+**Rollback** 
+<img width="1030" height="287" alt="11" src="https://github.com/user-attachments/assets/abd59edb-b0cb-4cc9-a527-0764351a0908" />
+<br><br>
+<img width="887" height="660" alt="11111" src="https://github.com/user-attachments/assets/deca01ef-1c10-4ba2-a968-e4e2fcc44a1a" />
+<br><br>
+<img width="588" height="242" alt="111" src="https://github.com/user-attachments/assets/9d4a3da2-5af3-4f4f-90e8-1047a7cc7ca4" />
+<br><br>
+<img width="1030" height="287" alt="11" src="https://github.com/user-attachments/assets/c1146a5c-7d63-4f57-b9c5-814908dfb087" />
+<br><br>
+
+**Commit**
+<img width="952" height="317" alt="22" src="https://github.com/user-attachments/assets/a9cc4aec-0f53-40cd-9aba-dd55dd4298f0" />
+<br><br>
+<img width="846" height="700" alt="2222" src="https://github.com/user-attachments/assets/ed6d1d97-ef6f-4bdd-8114-8eab0672e0d2" />
+<br><br>
+<img width="700" height="252" alt="צילום מסך 2026-05-04 234154" src="https://github.com/user-attachments/assets/4148cad7-0cf0-446b-a90a-d1cf977b003f" />
+<br><br>
+<img width="1031" height="322" alt="222" src="https://github.com/user-attachments/assets/fe69f219-ccb5-4eae-a283-2c1eb9f0eac4" />
+<br><br>
+
 
 ### Index
+**1.** לאחר הוספת האינדקס, ניתן לראות בבירור שהאופטימייזר בחר להשתמש ב-Index Scan במקום לסרוק את כל הטבלה. כתוצאה מכך, זמן הריצה התקצר משמעותית והעומס על בסיס הנתונים פחת, מכיוון שנבדקו רק השורות הרלוונטיות לשאילתה
+<img width="771" height="436" alt="111111" src="https://github.com/user-attachments/assets/02f9f57c-35ea-4cd8-805a-9c3f08001e67" />
+<br><br>
+<img width="1031" height="382" alt="1111" src="https://github.com/user-attachments/assets/5ccc5288-a736-4708-87b5-fd71b8a344be" />
+<br><br>
+<img width="1036" height="502" alt="11111" src="https://github.com/user-attachments/assets/549cd82c-920c-482c-b170-086e7463e5ba" />
+<br><br>
+
+**2.** הוספת האינדקס על עמודת ProviderID הפכה את החיפוש לפי ספק מפעולה של סריקה מלאה (Seq Scan) לגישה ישירה וממוקדת (Index Scan), מה שהוביל לחיסכון משמעותי במשאבי מערכת ולקיצור זמן התגובה של השאילתה
+<img width="662" height="416" alt="22222" src="https://github.com/user-attachments/assets/8b8854c7-7e71-465e-8455-35805560e1ec" />
+<br><br>
+<img width="642" height="221" alt="222" src="https://github.com/user-attachments/assets/79c34893-ade5-4ff1-ba5d-11bce5238fa0" />
+<br><br>
+<img width="1031" height="321" alt="22" src="https://github.com/user-attachments/assets/3ecbc049-8445-4375-95af-a57d331bc2a7" />
+<br><br>
+<img width="1033" height="507" alt="2222" src="https://github.com/user-attachments/assets/52bd5a39-d4f6-435c-8065-87e5109b2f9a" />
+<br><br>
+
+**3.** האינדקס המשולב שיצרנו מאפשר למערכת לבצע סינון אופטימלי לפי שני קריטריונים בו-זמנית. בזכות המיון המשותף של ItemID ו-ProviderID, השאילתה מבצעת שליפה ישירה של השורות המתאימות בלבד, ללא צורך בסריקה מיותרת של נתונים שאינם עונים על שני התנאים יחד
+<img width="805" height="420" alt="33" src="https://github.com/user-attachments/assets/dfedcc34-94f0-4494-bc45-f5f8fd791463" />
+<br><br>
+<img width="612" height="212" alt="3333" src="https://github.com/user-attachments/assets/5a4f4468-fa80-41b8-972a-9d7c7ff49361" />
+<br><br>
+<img width="1027" height="415" alt="333" src="https://github.com/user-attachments/assets/24ba61ca-c9be-4476-a1cb-4e5027c71bf6" />
+<br><br>
+<img width="1033" height="381" alt="33333" src="https://github.com/user-attachments/assets/9596bcd8-c81e-4176-96c1-8d1e0aa4d309" />
+<br><br>
 
 
 ### backup2
-
+backups files are kept with the date and hour of the backup:
+* 📜 [View `Phase2/backup.backup2-28_4_26`](Phase2/backup.backup2-28_4_26)
+<br><br>
+<img width="578" height="330" alt="צילום מסך 2026-05-05 001108" src="https://github.com/user-attachments/assets/19e8d46d-ec03-4548-b739-4aa5a7a19ab0" />
+<br><br>
