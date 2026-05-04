@@ -320,8 +320,38 @@ backups files are kept with the date and hour of the backup:
 
 ### RollbackCommit
 
+**Rollback** 
+<img width="1030" height="287" alt="11" src="https://github.com/user-attachments/assets/abd59edb-b0cb-4cc9-a527-0764351a0908" />
+<br><br>
+<img width="887" height="660" alt="11111" src="https://github.com/user-attachments/assets/deca01ef-1c10-4ba2-a968-e4e2fcc44a1a" />
+<br><br>
+<img width="588" height="242" alt="111" src="https://github.com/user-attachments/assets/9d4a3da2-5af3-4f4f-90e8-1047a7cc7ca4" />
+<br><br>
+<img width="1030" height="287" alt="11" src="https://github.com/user-attachments/assets/c1146a5c-7d63-4f57-b9c5-814908dfb087" />
+<br><br>
+
+**Commit**
+<img width="952" height="317" alt="22" src="https://github.com/user-attachments/assets/a9cc4aec-0f53-40cd-9aba-dd55dd4298f0" />
+<br><br>
+<img width="846" height="700" alt="2222" src="https://github.com/user-attachments/assets/ed6d1d97-ef6f-4bdd-8114-8eab0672e0d2" />
+<br><br>
+<img width="700" height="252" alt="צילום מסך 2026-05-04 234154" src="https://github.com/user-attachments/assets/4148cad7-0cf0-446b-a90a-d1cf977b003f" />
+<br><br>
+<img width="1031" height="322" alt="222" src="https://github.com/user-attachments/assets/fe69f219-ccb5-4eae-a283-2c1eb9f0eac4" />
+<br><br>
+
 
 ### Index
+**1.** לאחר הוספת האינדקס, ניתן לראות בבירור שהאופטימייזר בחר להשתמש ב-Index Scan במקום לסרוק את כל הטבלה. כתוצאה מכך, זמן הריצה התקצר משמעותית והעומס על בסיס הנתונים פחת, מכיוון שנבדקו רק השורות הרלוונטיות לשאילתה
+<img width="771" height="436" alt="111111" src="https://github.com/user-attachments/assets/02f9f57c-35ea-4cd8-805a-9c3f08001e67" />
+<br><br>
+<img width="1031" height="382" alt="1111" src="https://github.com/user-attachments/assets/5ccc5288-a736-4708-87b5-fd71b8a344be" />
+<br><br>
+<img width="1036" height="502" alt="11111" src="https://github.com/user-attachments/assets/549cd82c-920c-482c-b170-086e7463e5ba" />
+<br><br>
+
+**2.**
+
 
 
 ### backup2
