@@ -181,3 +181,62 @@ JOIN SERVICEPROVIDER sp ON r.ProviderID = sp.ProviderID
 WHERE r.NumberOfPeople > 5
   AND sp.ServiceType = 'Hotel'
 ORDER BY reservationid ASC
+
+
+--DELETE Query--
+
+--1. מחיקת רשומות מטבלת "TOURIST" עבור תיירים שמעולם לא ביצעו הזמנה במערכת
+DELETE FROM TOURIST t
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM RESERVATION r
+    WHERE r.TouristID = t.TouristID
+)
+
+
+SELECT *
+FROM TOURIST t
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM RESERVATION r
+    WHERE r.TouristID = t.TouristID
+)
+
+
+--2. מחיקת קופונים מטבלת COUPON שתאריך הסיום שלהם קטן מתאריך ושעת המערכת הנוכחיים
+DELETE FROM include
+WHERE couponid IN (SELECT couponid FROM coupon WHERE EndDate < CURRENT_DATE);
+
+DELETE FROM coupon
+WHERE EndDate < CURRENT_DATE;
+
+
+SELECT * FROM COUPON
+WHERE EndDate < CURRENT_DATE;
+
+
+--3. מחיקת כל מנות מהתפריט שהמחיר שלהם קטן מ-15, ושייכים למסעדות שנמצאות בחיפה
+DELETE FROM orderline
+WHERE (itemid, providerid) IN (
+    SELECT itemid, providerid
+    FROM MENUITEM
+    WHERE Price < 15
+      AND ProviderID IN (SELECT ProviderID FROM SERVICEPROVIDER WHERE City = 'Haifa')
+);
+
+DELETE FROM MENUITEM
+WHERE Price < 15
+  AND ProviderID IN (
+    SELECT ProviderID
+    FROM SERVICEPROVIDER
+    WHERE City = 'Haifa'
+);
+
+
+SELECT * FROM MENUITEM
+WHERE Price < 15
+  AND ProviderID IN (
+    SELECT ProviderID
+    FROM SERVICEPROVIDER
+    WHERE City = 'Haifa'
+  );
