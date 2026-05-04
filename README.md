@@ -350,13 +350,30 @@ backups files are kept with the date and hour of the backup:
 <img width="1036" height="502" alt="11111" src="https://github.com/user-attachments/assets/549cd82c-920c-482c-b170-086e7463e5ba" />
 <br><br>
 
-**2.**
+**2.** הוספת האינדקס על עמודת ProviderID הפכה את החיפוש לפי ספק מפעולה של סריקה מלאה (Seq Scan) לגישה ישירה וממוקדת (Index Scan), מה שהוביל לחיסכון משמעותי במשאבי מערכת ולקיצור זמן התגובה של השאילתה
+<img width="662" height="416" alt="22222" src="https://github.com/user-attachments/assets/8b8854c7-7e71-465e-8455-35805560e1ec" />
+<br><br>
+<img width="642" height="221" alt="222" src="https://github.com/user-attachments/assets/79c34893-ade5-4ff1-ba5d-11bce5238fa0" />
+<br><br>
+<img width="1031" height="321" alt="22" src="https://github.com/user-attachments/assets/3ecbc049-8445-4375-95af-a57d331bc2a7" />
+<br><br>
+<img width="1033" height="507" alt="2222" src="https://github.com/user-attachments/assets/52bd5a39-d4f6-435c-8065-87e5109b2f9a" />
+<br><br>
 
+**3.** האינדקס המשולב שיצרנו מאפשר למערכת לבצע סינון אופטימלי לפי שני קריטריונים בו-זמנית. בזכות המיון המשותף של ItemID ו-ProviderID, השאילתה מבצעת שליפה ישירה של השורות המתאימות בלבד, ללא צורך בסריקה מיותרת של נתונים שאינם עונים על שני התנאים יחד
+<img width="805" height="420" alt="33" src="https://github.com/user-attachments/assets/dfedcc34-94f0-4494-bc45-f5f8fd791463" />
+<br><br>
+<img width="612" height="212" alt="3333" src="https://github.com/user-attachments/assets/5a4f4468-fa80-41b8-972a-9d7c7ff49361" />
+<br><br>
+<img width="1027" height="415" alt="333" src="https://github.com/user-attachments/assets/24ba61ca-c9be-4476-a1cb-4e5027c71bf6" />
+<br><br>
+<img width="1033" height="381" alt="33333" src="https://github.com/user-attachments/assets/9596bcd8-c81e-4176-96c1-8d1e0aa4d309" />
+<br><br>
 
 
 ### backup2
 backups files are kept with the date and hour of the backup:
 * 📜 [View `Phase2/backup.backup2-28_4_26`](Phase2/backup.backup2-28_4_26)
 <br><br>
-<br><br>
+<img width="578" height="330" alt="צילום מסך 2026-05-05 001108" src="https://github.com/user-attachments/assets/19e8d46d-ec03-4548-b739-4aa5a7a19ab0" />
 <br><br>
