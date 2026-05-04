@@ -15,10 +15,10 @@ Selected system: Tourist services - restaurant reservations
   * [select queries](#select-queries)
   * [update queries](#update-queries)
   * [delete queries](#delete-queries)
-  * [Constraints](Constraints)
-  * [RollbackCommit](RollbackCommit)
-  * [Index](Index)
-  * [backup2](backup2)
+  * [Constraints](#Constraints)
+  * [RollbackCommit](#RollbackCommit)
+  * [Index](#Index)
+  * [backup2](#backup2)
 
 
 ## Phase 1: Design and Build the Database
