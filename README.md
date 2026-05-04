@@ -305,6 +305,18 @@ backups files are kept with the date and hour of the backup:
 
 ### Constraints
 
+**1.** האילוץ קובע שאי אפשר להכניס להזמנה יותר מ-20 אנשים, והוא חוסם אוטומטית כל רישום של מספר גבוה יותר
+<img width="1021" height="711" alt="11" src="https://github.com/user-attachments/assets/3d0b1330-82f3-46e5-9cd8-43b61c6079ca" />
+<br><br>
+
+**2.** האילוץ מוודא שמספרי הטלפון בטבלה יהיו באורך תקין, והוא חוסם הכנסה של מספרים קצרים מדי (כמו 050995)
+<img width="1057" height="701" alt="22" src="https://github.com/user-attachments/assets/81ec7cea-ea66-4ee6-9f6b-f1a995c9cc42" />
+<br><br>
+
+**3.** האילוץ על עמודת תאריך הסיום הופך אותה לשדה חובה, והוא מונע מצב שבו מכניסים קופון למערכת בלי לציין מתי הוא מסתיים
+<img width="1061" height="712" alt="33" src="https://github.com/user-attachments/assets/35d70892-c217-47f7-830a-a02f8b718ff8" />
+<br><br>
+
 
 ### RollbackCommit
 
@@ -313,4 +325,8 @@ backups files are kept with the date and hour of the backup:
 
 
 ### backup2
-
+backups files are kept with the date and hour of the backup:
+* 📜 [View `Phase2/backup.backup2-28_4_26`](Phase2/backup.backup2-28_4_26)
+<br><br>
+<br><br>
+<br><br>
