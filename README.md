@@ -24,8 +24,8 @@ Selected system: Tourist services - restaurant reservations
   * [The new DSD](#The-new-DSD)
   * [ERD of the integration](#ERD-of-the-integration)
   * [DSD after integration](#DSD-after-integration)
-  * [Alter and create table commands in the integration](#Alter-and-create-table-commands-in-the-integration)
-  * [Commands for creating views and queries on views in the Views.sql](#Commands-for-creating-views-and-queries-on-views-in-the-Views.sql)
+  * [Alter and create table commands in the integration file](#Alter-and-create-table-commands-in-the-integration-file)
+  * [Commands for creating views and queries on views in the Views file](#Commands-for-creating-views-and-queries-on-views-in-the-Views-file)
   * [backup3](#backup3)
 
 ## Phase 1: Design and Build the Database
@@ -404,10 +404,10 @@ backups files are kept with the date and hour of the backup:
 <img width="4512" height="2190" alt="erdplus (15)" src="https://github.com/user-attachments/assets/8c472e7e-3f40-449a-8f95-4fab2a60eeda" />
 <br><br>
 
-### Alter and create table commands in the integration
+### Alter and create table commands in the integration file
 * 📜 [View `/integration.sql`](Phase3/integration.sql)
 
-### Commands for creating views and queries on views in the Views.sql
+### Commands for creating views and queries on views in the Views file
 <img width="921" height="437" alt="מבט111" src="https://github.com/user-attachments/assets/eef0abe3-11d1-48f6-bb02-79576e645e03" />
 <br><br>
 <img width="545" height="193" alt="view1" src="https://github.com/user-attachments/assets/258b6a2e-3fce-4ad6-a129-389368397b6e" />
