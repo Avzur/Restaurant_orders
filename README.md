@@ -25,7 +25,7 @@ Selected system: Tourist services - restaurant reservations
   * [ERD of the integration](#ERD-of-the-integration)
   * [DSD after integration](#DSD-after-integration)
   * [Alter and create table commands in the integration.sql](#Alter-and-create-table-commands-in-the-integration.sql)
-  * [Commands for creating views and queries on views in the Views.sql file](#Commands-for-creating-views-and-queries-on-views-in-the-Views.sql-file)
+  * [Commands for creating views and queries on views in the Views.sql](#Commands-for-creating-views-and-queries-on-views-in-the-Views.sql)
   * [backup3](#backup3)
 
 ## Phase 1: Design and Build the Database
@@ -408,6 +408,22 @@ backups files are kept with the date and hour of the backup:
 * 📜 [View `/integration.sql`](Phase3/integration.sql)
 
 ### Commands for creating views and queries on views in the Views.sql file
+<img width="921" height="437" alt="מבט111" src="https://github.com/user-attachments/assets/eef0abe3-11d1-48f6-bb02-79576e645e03" />
+<br><br>
+<img width="545" height="193" alt="view1" src="https://github.com/user-attachments/assets/258b6a2e-3fce-4ad6-a129-389368397b6e" />
+<br><br>
+<img width="1365" height="473" alt="מבט11" src="https://github.com/user-attachments/assets/cc6f6394-71d4-4a79-a60f-24782384018b" />
+<br><br>
+<img width="1075" height="210" alt="שאילתה1" src="https://github.com/user-attachments/assets/5d2df0dc-f134-4682-a57a-afbd182e9cf9" />
+<br><br>
+<img width="1042" height="287" alt="שאילתה1-1" src="https://github.com/user-attachments/assets/8d52462d-5f15-4838-b6f4-cd9d2c0a08c8" />
+<br><br>
+<img width="731" height="262" alt="שאילתה2" src="https://github.com/user-attachments/assets/2aa15706-3e0d-4c9b-9243-f5f27443ef23" />
+<br><br>
+<img width="596" height="290" alt="שאילתה1-2" src="https://github.com/user-attachments/assets/b7678a03-f456-45d9-86ae-9d1cd2750e53" />
+<br><br>
 
+#### The second view (on the database we received) is in the Views.sql file.
+* 📜 [View `/Views.sql`](Phase3/Views.sql)
 
 
