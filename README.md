@@ -24,7 +24,7 @@ Selected system: Tourist services - restaurant reservations
   * [The new DSD](#The-new-DSD)
   * [ERD of the integration](#ERD-of-the-integration)
   * [DSD after integration](#DSD-after-integration)
-  * [Alter and create table commands in the integration.sql](#Alter-and-create-table-commands-in-the-integration)
+  * [Alter and create table commands in the integration.sql](#Alter-and-create-table-commands-in-the-integration.sql)
   * [Commands for creating views and queries on views in the Views.sql](#Commands-for-creating-views-and-queries-on-views-in-the-Views.sql)
   * [backup3](#backup3)
 
@@ -407,7 +407,7 @@ backups files are kept with the date and hour of the backup:
 ### Alter and create table commands in the integration.sql
 * 📜 [View `/integration.sql`](Phase3/integration.sql)
 
-### Commands for creating views and queries on views in the Views.sql file
+### Commands for creating views and queries on views in the Views.sql
 <img width="921" height="437" alt="מבט111" src="https://github.com/user-attachments/assets/eef0abe3-11d1-48f6-bb02-79576e645e03" />
 <br><br>
 <img width="545" height="193" alt="view1" src="https://github.com/user-attachments/assets/258b6a2e-3fce-4ad6-a129-389368397b6e" />
