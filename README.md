@@ -25,6 +25,8 @@ Selected system: Tourist services - restaurant reservations
   * [ERD of the integration](#ERD-of-the-integration)
   * [DSD after integration](#DSD-after-integration)
   * [Alter and create table commands in the integration.sql](#Alter-and-create-table-commands-in-the-integration.sql)
+  * [Commands for creating views and queries on views in the Views.sql file](#Commands-for-creating-views-and-queries-on-views-in-the-Views.sql-file)
+  * [backup3](#backup3)
 
 ## Phase 1: Design and Build the Database
 
@@ -404,4 +406,8 @@ backups files are kept with the date and hour of the backup:
 
 ### Alter and create table commands in the integration.sql
 * 📜 [View `/integration.sql`](Phase3/integration.sql)
+
+### Commands for creating views and queries on views in the Views.sql file
+
+
 
