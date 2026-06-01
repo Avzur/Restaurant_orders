@@ -24,7 +24,7 @@ Selected system: Tourist services - restaurant reservations
   * [The new DSD](#The-new-DSD)
   * [ERD of the integration](#ERD-of-the-integration)
   * [DSD after integration](#DSD-after-integration)
-  * [Alter and create table commands in the integration.sql](#Alter-and-create-table-commands-in-the-integration.sql)
+  * [Alter and create table commands in the integration.sql](#Alter-and-create-table-commands-in-the-integration)
   * [Commands for creating views and queries on views in the Views.sql](#Commands-for-creating-views-and-queries-on-views-in-the-Views.sql)
   * [backup3](#backup3)
 
