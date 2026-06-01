@@ -19,7 +19,12 @@ Selected system: Tourist services - restaurant reservations
   * [RollbackCommit](#RollbackCommit)
   * [Index](#Index)
   * [backup2](#backup2)
-
+* [Phase 3: Integration and Views](#Phase-3-Integration-and-Views)
+  * [The new ERD](#The-new-ERD)
+  * [The new DSD](#The-new-DSD)
+  * [ERD of the integration](#ERD-of-the-integration)
+  * [DSD after integration](#DSD-after-integration)
+  * [Alter and create table commands in the integration.sql](#Alter-and-create-table-commands-in-the-integration.sql)
 
 ## Phase 1: Design and Build the Database
 
@@ -377,3 +382,26 @@ backups files are kept with the date and hour of the backup:
 <br><br>
 <img width="578" height="330" alt="צילום מסך 2026-05-05 001108" src="https://github.com/user-attachments/assets/19e8d46d-ec03-4548-b739-4aa5a7a19ab0" />
 <br><br>
+
+
+## Phase 3: Integration and Views
+
+### The new ERD
+<img width="4512" height="2190" alt="erdplus (13)" src="https://github.com/user-attachments/assets/c82a4d85-2593-41ca-b73a-4e9ef221aef3" />
+<br><br>
+
+### The new DSD
+<img width="4512" height="2190" alt="erdplus (12)" src="https://github.com/user-attachments/assets/fd56c89c-cd78-42ad-a8d6-07ae1aaf9733" />
+<br><br>
+
+### ERD of the integration
+<img width="4512" height="2190" alt="erdplus (14)" src="https://github.com/user-attachments/assets/5130defe-78cd-4616-9579-9418dae3b30c" />
+<br><br>
+
+### DSD after integration
+<img width="4512" height="2190" alt="erdplus (15)" src="https://github.com/user-attachments/assets/8c472e7e-3f40-449a-8f95-4fab2a60eeda" />
+<br><br>
+
+### Alter and create table commands in the integration.sql
+* 📜 [View `/integration.sql`](Phase3/integration.sql)
+
