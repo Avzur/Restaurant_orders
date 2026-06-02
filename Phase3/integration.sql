@@ -42,4 +42,62 @@ RENAME TO reservation;
 
 
 
+----------------------------------
+
+SELECT MAX(couponid) FROM public.coupon1;
+
+
+-- 1. הסרת אילוצי מפתח זר הישנים מהטבלאות המקושרות כדי שנוכל לשנות את ה-IDs
+ALTER TABLE public.customercoupon
+DROP CONSTRAINT IF EXISTS customercoupon_coupon_id_fkey;
+
+ALTER TABLE public.attractioncoupon
+DROP CONSTRAINT IF EXISTS attractioncoupon_coupon_id_fkey;
+
+
+
+-- 2. עדכון המפתחות הזרים בטבלאות המקושרות (הוספת 10000 למניעת התנגשות)
+UPDATE public.customercoupon
+SET coupon_id = coupon_id + 500;
+
+UPDATE public.attractioncoupon
+SET coupon_id = coupon_id + 500;
+
+
+
+INSERT INTO public.coupon1 (couponid, couponcode, discountpercent, startdate, enddate, providerid, status)
+SELECT
+    coupon_id + 500,                            -- מפתח ראשי חדש ורץ ללא התנגשויות
+    coupon_code,                                  -- קוד הקופון
+    coupon_discount_percent,                      -- אחוז ההנחה
+    '2026-01-01'::date,                           -- ברירת מחדל לתאריך התחלה (כי אין בטבלת המקור)
+    coupon_expiry_date,                           -- תאריך תוקף
+    158,                                          -- providerid ברירת מחדל זמנית להתאמה למבנה
+    CASE
+        WHEN coupon_status = 'Active' THEN 'A'    -- התאמה לתו בודד (character 1) בטבלת היעד
+        WHEN coupon_status = 'Used' THEN 'U'
+        ELSE 'E'
+    END
+FROM public.coupon
+ON CONFLICT (couponid) DO NOTHING;
+
+
+ALTER TABLE public.customercoupon
+ADD CONSTRAINT customercoupon_coupon1_id_fkey
+FOREIGN KEY (coupon_id) REFERENCES public.coupon1(couponid);
+
+ALTER TABLE public.attractioncoupon
+ADD CONSTRAINT attractioncoupon_coupon1_id_fkey
+FOREIGN KEY (coupon_id) REFERENCES public.coupon1(couponid);
+
+DROP TABLE public.coupon;
+
+-- 3. שינוי שם הטבלה המאוחדת לשם הנקי והסופי
+ALTER TABLE public.coupon1
+RENAME TO coupon;
+
+
+
+
+
 
