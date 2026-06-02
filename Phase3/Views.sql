@@ -1,4 +1,6 @@
 -- A view of our database
+המבט מאחד את שלוש הטבלאות הפיזיות של אגף המסעדות (reservation, tourist, restaurant_table)--
+ומציג תצוגה אחת מרוכזת וקריאה המקשרת ישירות בין פרטי ההזמנה, השם המלא של התייר ומספר השולחן ששוריין עבורו. --
 CREATE OR REPLACE VIEW public.v_restaurant_reservations AS
 SELECT 
     r.reservationid AS ReservationID,
@@ -36,6 +38,8 @@ ORDER BY TotalReservations DESC;
 
 
 -- A view at the database we received
+המבט מאחד את טבלת שריון האטרקציות (reservedattraction) עם טבלת האטרקציות הכללית (attraction) --
+ כדי להציג תצוגה מרוכזת וקריאה של שמות המקומות, המיקומים והמחירים עבור כל מספר הזמנה. --
 CREATE OR REPLACE VIEW public.v_attraction_bookings AS
 SELECT 
     ra.reservation_id AS ReservationID,
