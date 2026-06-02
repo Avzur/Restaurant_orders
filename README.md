@@ -406,6 +406,7 @@ backups files are kept with the date and hour of the backup:
 
 ### Alter and create table commands in the integration file
 * 📜 [View `/integration.sql`](Phase3/integration.sql)
+<br><br>
 
 ### Commands for creating views and queries on views in the Views file
 <img width="921" height="437" alt="מבט111" src="https://github.com/user-attachments/assets/eef0abe3-11d1-48f6-bb02-79576e645e03" />
@@ -425,7 +426,7 @@ backups files are kept with the date and hour of the backup:
 
 #### The second view (on the database we received) is in the Views.sql file.
 * 📜 [View `/Views.sql`](Phase3/Views.sql)
-
+<br><br>
 
 ### backup3
 
