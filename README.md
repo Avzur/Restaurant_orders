@@ -24,6 +24,7 @@ Selected system: Tourist services - restaurant reservations
   * [The new DSD](#The-new-DSD)
   * [ERD of the integration](#ERD-of-the-integration)
   * [DSD after integration](#DSD-after-integration)
+  * [reverse engineering](#reverse-engineering)
   * [Alter and create table commands in the integration file](#Alter-and-create-table-commands-in-the-integration-file)
   * [Commands for creating views and queries on views in the Views file](#Commands-for-creating-views-and-queries-on-views-in-the-Views-file)
   * [backup3](#backup3)
@@ -403,6 +404,14 @@ backups files are kept with the date and hour of the backup:
 ### DSD after integration
 <img width="4512" height="2190" alt="erdplus (15)" src="https://github.com/user-attachments/assets/8c472e7e-3f40-449a-8f95-4fab2a60eeda" />
 <br><br>
+
+### reverse engineering
+מתוך הDSD שנוצר מהבסיס נתונים שקיבלנו יצרנו את הERD שלו בהינדוס לאחור. האלגוריתם:
+שלב 1: מיפוי הישויות (Entities), סריקת רשימת הטבלאות הפיזיות בבסיס הנתונים שהתקבל. כל טבלה עצמאית שמייצגת עצם בעולם האמיתי (כגון: tourist, attraction, coupon) מתורגמת למלבן של ישות בתרשים ה-ERD.
+שלב 2: הגדרת תכונות (Attributes) ומפתחותעבור כל טבלה, חקירת העמודות וסוגי הנתונים שלהן.עמודות רגילות מתורגמות לשדות (עיגולים) המחוברים לישות. עמודה המוגדרת כמפתח ראשי (Primary Key) מסומנת בקו תחתון בתוך העיגול שלה בתרשים הERD.
+שלב 3: זיהוי ונטרול טבלאות קשר (Many-to-Many Bridge Tables), איתור טבלאות פיזיות שכל תפקידן הוא לחבר בין שתי טבלאות אחרות (הן מכילות בעיקר מפתחות זרים, כמו למשל הטבלאות reservedattraction או attractioncoupon). ב-ERD טבלאות אלו אינן מופיעות כמלבן עצמאי, אלא מתורגמות לצורת מעוין של קשר (Relationship) המחבר ישירות בין שתי הישויות.
+שלב 4: הגדרת קשרים (Relationships) וריבוי (Cardinality), איתור המפתחות הזרים (Foreign Keys) בטבלאות כדי להבין מי קשור למי. קביעת עוצמת הקשר (יחיד לרבים 1:N, או רבים לרבים N:M) על סמך חוקי העסק המשתקפים באילוצים (Constraints) ובאינדקסים של בסיס הנתונים.
+
 
 ### Alter and create table commands in the integration file
 * 📜 [View `/integration.sql`](Phase3/integration.sql)
