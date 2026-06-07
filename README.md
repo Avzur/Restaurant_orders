@@ -22,6 +22,7 @@ Selected system: Tourist services - restaurant reservations
 * [Phase 3: Integration and Views](#Phase-3-Integration-and-Views)
   * [The new ERD](#The-new-ERD)
   * [The new DSD](#The-new-DSD)
+  * [Integration Steps Summary](#Integration-Steps-Summary)
   * [ERD of the integration](#ERD-of-the-integration)
   * [DSD after integration](#DSD-after-integration)
   * [reverse engineering](#reverse-engineering)
@@ -396,6 +397,25 @@ backups files are kept with the date and hour of the backup:
 ### The new DSD
 <img width="4512" height="2190" alt="erdplus (12)" src="https://github.com/user-attachments/assets/fd56c89c-cd78-42ad-a8d6-07ae1aaf9733" />
 <br><br>
+
+### Integration Steps Summary
+<br><br>
+בשלב איחוד בסיסי הנתונים (אגף האטרקציות ואגף המסעדות), זיהינו כפילות במבנה - המערכת שקיבלנו הכילה את טבלת coupon (אגף האטרקציות), בעוד שהמערכת שלנו הכילה גם את טבלת coupon (אגף המסעדות). שתי הטבלאות ייצגו את אותה ישות לוגית אך החזיקו במבנה שדות שונה ובמפתחות ראשיים חופפים שהתחילו שניהם מהערך 1. (אותו מקרה קרה גם בטבלת ה reservation שהיתה פעמיים בבסיס הנתונים)
+<br><br>
+כדי לבצע אינטגרציה פיזית מלאה ולמנוע אובדן נתונים או שבירת קשרים, פעלנו באופן הבא:
+<br><br>
+**1.** מיפוי ונטרול אילוצי מפתחות זרים (Foreign Keys)
+לפני שינוי הנתונים, מיפינו את הטבלאות ה"בנות" המסתמכות על טבלת המקור coupon (הטבלאות customercoupon ו-attractioncoupon). הסרנו זמנית את אילוצי המפתח הזר (DROP CONSTRAINT) כדי לאפשר את עדכון ערכי ה-IDs ללא שגיאות קשר (Referential Integrity).
+<br><br>
+**2.** פתרון התנגשויות מפתחות (Primary Key Conflicts)
+מאחר ששני בסיסי הנתונים השתמשו במספרים רצים (Auto-Increment) שהתחילו מ-1, העתקה ישירה הייתה גורמת לדריסת נתונים או שגיאות ייחודיות (Unique Violation). פתרנו זאת על ידי הטיית מפתחות (ID Offsetting): הוספנו קבוע לכל ערכי ה-coupon_id של טבלת המקור (וכן לכל המפתחות הזרים המצביעים עליהם בטבלאות הבנות). צעד זה יצר מרווח ביטחון מוחלט ומנע התנגשויות עם הנתונים הקיימים בטבלת היעד.
+<br><br>
+**3.** השלמת שדות חובה: שדות שהיו קיימים רק בטבלת היעד (כגון startdate ו-providerid) הושלמו באמצעות ערכי ברירת מחדל הגיוניים כדי לעמוד באילוצי ה-NOT NULL של הטבלה המאוחדת.
+<br><br>
+**4.** החזרת האילוצים ועדכון מונים (Post-Migration)
+לאחר העתקה מושלמת של כל הרשומות, קישרנו מחדש את אילוצי המפתחות הזרים של הטבלאות הבנות, אך הפעם ישירות אל הטבלה המאוחדת coupon1. לבסוף, הרצנו פקודת setval כדי לעדכן את המונה האוטומטי (Sequence) של הדטאבייס למספר המקסימלי החדש, מחקנו את טבלת המקור הכפולה (DROP TABLE) ושינינו את שם טבלת היעד המאוחדת לשם הסופי והישן: coupon.
+<br><br>
+
 
 ### ERD of the integration
 <img width="4512" height="2190" alt="erdplus (14)" src="https://github.com/user-attachments/assets/5130defe-78cd-4616-9579-9418dae3b30c" />
