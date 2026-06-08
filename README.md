@@ -29,7 +29,7 @@ Selected system: Tourist services - restaurant reservations
   * [Alter and create table commands in the integration file](#Alter-and-create-table-commands-in-the-integration-file)
   * [Commands for creating views and queries on views in the Views file](#Commands-for-creating-views-and-queries-on-views-in-the-Views-file)
   * [backup3](#backup3)
-* [Phase 4: PL/pgSQL programs](#Phase-4-PL-/-pgSQL-programs)
+* [Phase 4: PL/pgSQL programs](#Phase-4-PL-pgSQL-programs)
 
 ## Phase 1: Design and Build the Database
 
@@ -468,4 +468,4 @@ backups files are kept with the date and hour of the backup:
 <br><br>
 <br><br>
 
-## Phase 4: PL/pgSQL programs
+## Phase 4: PL pgSQL programs
