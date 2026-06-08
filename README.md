@@ -497,3 +497,11 @@ backups files are kept with the date and hour of the backup:
 <img width="1048" height="506" alt="22" src="https://github.com/user-attachments/assets/1ead305e-3393-4bd3-b115-fec417545484" />
 <br><br>
 
+### Procedures
+פרוצדורה 1: עדכון אוטומטי של כמות אנשים בהזמנה חריגה, נוצרו לנו הרבה הזמנות עם אדם 1 בלבד. הפרוצדורה הזו משתמשת בלולאת FOR (Implicit Cursor) כדי לעבור על כל ההזמנות שבהן מספר האנשים הוא 1, ומעדכנת אותן אוטומטית ל-2 אנשים (ברירת מחדל)
+<br><br>
+<img width="952" height="507" alt="P11" src="https://github.com/user-attachments/assets/c24491d3-7354-4251-acd1-89c88201896c" />
+<br><br>
+<img width="575" height="202" alt="P1" src="https://github.com/user-attachments/assets/6498e76e-b1c2-4c08-900c-353bd289f848" />
+<br><br>
+
