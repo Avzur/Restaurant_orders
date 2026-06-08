@@ -486,3 +486,14 @@ backups files are kept with the date and hour of the backup:
 <img width="932" height="617" alt="111" src="https://github.com/user-attachments/assets/b3ff806f-879f-449d-b87c-1f74a249c13d" />
 <br><br>
 
+פונקציה 2: הפונקציה הזו מקבלת מזהה ספק (p_provider_id). היא רצה עם לולאה מובנית על כל הקופונים של אותו ספק בטבלת coupon, סופרת כמה קופונים יש לו בסך הכל, ומחזירה את המספר הסופי.
+<br><br>
+<img width="981" height="516" alt="f22" src="https://github.com/user-attachments/assets/c1740a4d-d451-41a7-ab18-8d2490b910b7" />
+<br><br>
+<img width="616" height="248" alt="f2" src="https://github.com/user-attachments/assets/91e0459f-7700-4a56-8b89-fe10aa44d168" />
+<br><br>
+<img width="1047" height="506" alt="222" src="https://github.com/user-attachments/assets/299c75ba-8f7e-4f33-8173-e250d110808e" />
+<br><br>
+<img width="1048" height="506" alt="22" src="https://github.com/user-attachments/assets/1ead305e-3393-4bd3-b115-fec417545484" />
+<br><br>
+
