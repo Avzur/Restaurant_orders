@@ -30,6 +30,10 @@ Selected system: Tourist services - restaurant reservations
   * [Commands for creating views and queries on views in the Views file](#Commands-for-creating-views-and-queries-on-views-in-the-Views-file)
   * [backup3](#backup3)
 * [Phase 4: PL/pgSQL programs](#Phase-4-PL-pgSQL-programs)
+  * [Functions](#Functions)
+  * [Procedures](#Procedures)
+  * [Triggers](#Triggers)
+  * [Main programs](#Main-programs)
 
 ## Phase 1: Design and Build the Database
 
@@ -469,3 +473,16 @@ backups files are kept with the date and hour of the backup:
 <br><br>
 
 ## Phase 4: PL pgSQL programs
+
+### Functions
+פונקציה 1: הפונקציה הזו מקבלת מספר תייר (touristid). היא פותחת Cursor שעובר על כל האטרקציות שהתייר הזה הזמין, מחשבת את סך כל המחיר שלהן, ומחזירה את הסכום הסופי. אם נתנו לה מספר תייר שלא קיים בכלל במערכת, היא תזרוק Exception במקום לקרוס
+<br><br>
+<img width="1037" height="797" alt="פונקציה11" src="https://github.com/user-attachments/assets/5726f4f7-b0c4-4ae0-9924-3b4d2342618b" />
+<br><br>
+<img width="532" height="200" alt="פונקציה1" src="https://github.com/user-attachments/assets/054e943e-4e49-4806-8e85-7f6aaefd39c6" />
+<br><br>
+<img width="1047" height="662" alt="11" src="https://github.com/user-attachments/assets/b8b4655f-05c5-4bc7-807c-615148b5c3ee" />
+<br><br>
+<img width="932" height="617" alt="111" src="https://github.com/user-attachments/assets/b3ff806f-879f-449d-b87c-1f74a249c13d" />
+<br><br>
+
