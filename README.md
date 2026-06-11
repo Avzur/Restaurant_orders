@@ -22,11 +22,18 @@ Selected system: Tourist services - restaurant reservations
 * [Phase 3: Integration and Views](#Phase-3-Integration-and-Views)
   * [The new ERD](#The-new-ERD)
   * [The new DSD](#The-new-DSD)
+  * [Integration Steps Summary](#Integration-Steps-Summary)
   * [ERD of the integration](#ERD-of-the-integration)
   * [DSD after integration](#DSD-after-integration)
+  * [reverse engineering](#reverse-engineering)
   * [Alter and create table commands in the integration file](#Alter-and-create-table-commands-in-the-integration-file)
   * [Commands for creating views and queries on views in the Views file](#Commands-for-creating-views-and-queries-on-views-in-the-Views-file)
   * [backup3](#backup3)
+* [Phase 4: PL/pgSQL programs](#Phase-4-PL-pgSQL-programs)
+  * [Functions](#Functions)
+  * [Procedures](#Procedures)
+  * [Triggers](#Triggers)
+  * [Main programs](#Main-programs)
 
 ## Phase 1: Design and Build the Database
 
@@ -396,12 +403,44 @@ backups files are kept with the date and hour of the backup:
 <img width="4512" height="2190" alt="erdplus (12)" src="https://github.com/user-attachments/assets/fd56c89c-cd78-42ad-a8d6-07ae1aaf9733" />
 <br><br>
 
+### Integration Steps Summary
+<br><br>
+בשלב איחוד בסיסי הנתונים (אגף האטרקציות ואגף המסעדות), זיהינו כפילות במבנה - המערכת שקיבלנו הכילה את טבלת coupon (אגף האטרקציות), בעוד שהמערכת שלנו הכילה גם את טבלת coupon (אגף המסעדות). שתי הטבלאות ייצגו את אותה ישות לוגית אך החזיקו במבנה שדות שונה ובמפתחות ראשיים חופפים שהתחילו שניהם מהערך 1. (אותו מקרה קרה גם בטבלת ה reservation שהיתה פעמיים בבסיס הנתונים)
+<br><br>
+כדי לבצע אינטגרציה פיזית מלאה ולמנוע אובדן נתונים או שבירת קשרים, פעלנו באופן הבא:
+<br><br>
+**1.** מיפוי ונטרול אילוצי מפתחות זרים (Foreign Keys)
+לפני שינוי הנתונים, מיפינו את הטבלאות ה"בנות" המסתמכות על טבלת המקור coupon (הטבלאות customercoupon ו-attractioncoupon). הסרנו זמנית את אילוצי המפתח הזר (DROP CONSTRAINT) כדי לאפשר את עדכון ערכי ה-IDs ללא שגיאות קשר (Referential Integrity).
+<br><br>
+**2.** פתרון התנגשויות מפתחות (Primary Key Conflicts)
+מאחר ששני בסיסי הנתונים השתמשו במספרים רצים (Auto-Increment) שהתחילו מ-1, העתקה ישירה הייתה גורמת לדריסת נתונים או שגיאות ייחודיות (Unique Violation). פתרנו זאת על ידי הטיית מפתחות (ID Offsetting): הוספנו קבוע לכל ערכי ה-coupon_id של טבלת המקור (וכן לכל המפתחות הזרים המצביעים עליהם בטבלאות הבנות). צעד זה יצר מרווח ביטחון מוחלט ומנע התנגשויות עם הנתונים הקיימים בטבלת היעד.
+<br><br>
+**3.** השלמת שדות חובה: שדות שהיו קיימים רק בטבלת היעד (כגון startdate ו-providerid) הושלמו באמצעות ערכי ברירת מחדל הגיוניים כדי לעמוד באילוצי ה-NOT NULL של הטבלה המאוחדת.
+<br><br>
+**4.** החזרת האילוצים ועדכון מונים (Post-Migration)
+לאחר העתקה מושלמת של כל הרשומות, קישרנו מחדש את אילוצי המפתחות הזרים של הטבלאות הבנות, אך הפעם ישירות אל הטבלה המאוחדת coupon1. לבסוף, הרצנו פקודת setval כדי לעדכן את המונה האוטומטי (Sequence) של הדטאבייס למספר המקסימלי החדש, מחקנו את טבלת המקור הכפולה (DROP TABLE) ושינינו את שם טבלת היעד המאוחדת לשם הסופי והישן: coupon.
+<br><br>
+
+
 ### ERD of the integration
 <img width="4512" height="2190" alt="erdplus (14)" src="https://github.com/user-attachments/assets/5130defe-78cd-4616-9579-9418dae3b30c" />
 <br><br>
 
 ### DSD after integration
 <img width="4512" height="2190" alt="erdplus (15)" src="https://github.com/user-attachments/assets/8c472e7e-3f40-449a-8f95-4fab2a60eeda" />
+<br><br>
+
+### reverse engineering
+
+מתוך הDSD שנוצר מהבסיס נתונים שקיבלנו יצרנו את הERD שלו בהינדוס לאחור. האלגוריתם:
+* **שלב 1:** מיפוי הישויות (Entities), סריקת רשימת הטבלאות הפיזיות בבסיס הנתונים שהתקבל. כל טבלה עצמאית שמייצגת עצם בעולם האמיתי (כגון: tourist, attraction, coupon) מתורגמת למלבן של ישות בתרשים ה-ERD.
+<br><br>
+* **שלב 2:** הגדרת תכונות (Attributes) ומפתחותעבור כל טבלה, חקירת העמודות וסוגי הנתונים שלהן.עמודות רגילות מתורגמות לשדות (עיגולים) המחוברים לישות. עמודה המוגדרת כמפתח ראשי (Primary Key) מסומנת בקו תחתון בתוך העיגול שלה בתרשים הERD.
+<br><br>
+* **שלב 3:** זיהוי ונטרול טבלאות קשר (Many-to-Many Bridge Tables), איתור טבלאות פיזיות שכל תפקידן הוא לחבר בין שתי טבלאות אחרות (הן מכילות בעיקר מפתחות זרים, כמו למשל הטבלאות reservedattraction או attractioncoupon). ב-ERD טבלאות אלו אינן מופיעות כמלבן עצמאי, אלא מתורגמות לצורת מעוין של קשר (Relationship) המחבר ישירות בין שתי הישויות.
+<br><br>
+* **שלב 4:** הגדרת קשרים (Relationships) וריבוי (Cardinality), איתור המפתחות הזרים (Foreign Keys) בטבלאות כדי להבין מי קשור למי. קביעת עוצמת הקשר (יחיד לרבים 1:N, או רבים לרבים N:M) על סמך חוקי העסק המשתקפים באילוצים (Constraints) ובאינדקסים של בסיס הנתונים.
+<br><br>
 <br><br>
 
 ### Alter and create table commands in the integration file
@@ -430,3 +469,39 @@ backups files are kept with the date and hour of the backup:
 
 ### backup3
 * 📜 [View `/backup_2_6_2026`](Phase3/backup_2_6_2026)
+<br><br>
+<br><br>
+
+## Phase 4: PL pgSQL programs
+
+### Functions
+פונקציה 1: הפונקציה הזו מקבלת מספר תייר (touristid). היא פותחת Cursor שעובר על כל האטרקציות שהתייר הזה הזמין, מחשבת את סך כל המחיר שלהן, ומחזירה את הסכום הסופי. אם נתנו לה מספר תייר שלא קיים בכלל במערכת, היא תזרוק Exception במקום לקרוס
+<br><br>
+<img width="1037" height="797" alt="פונקציה11" src="https://github.com/user-attachments/assets/5726f4f7-b0c4-4ae0-9924-3b4d2342618b" />
+<br><br>
+<img width="532" height="200" alt="פונקציה1" src="https://github.com/user-attachments/assets/054e943e-4e49-4806-8e85-7f6aaefd39c6" />
+<br><br>
+<img width="1047" height="662" alt="11" src="https://github.com/user-attachments/assets/b8b4655f-05c5-4bc7-807c-615148b5c3ee" />
+<br><br>
+<img width="932" height="617" alt="111" src="https://github.com/user-attachments/assets/b3ff806f-879f-449d-b87c-1f74a249c13d" />
+<br><br>
+
+פונקציה 2: הפונקציה הזו מקבלת מזהה ספק (p_provider_id). היא רצה עם לולאה מובנית על כל הקופונים של אותו ספק בטבלת coupon, סופרת כמה קופונים יש לו בסך הכל, ומחזירה את המספר הסופי.
+<br><br>
+<img width="981" height="516" alt="f22" src="https://github.com/user-attachments/assets/c1740a4d-d451-41a7-ab18-8d2490b910b7" />
+<br><br>
+<img width="616" height="248" alt="f2" src="https://github.com/user-attachments/assets/91e0459f-7700-4a56-8b89-fe10aa44d168" />
+<br><br>
+<img width="1047" height="506" alt="222" src="https://github.com/user-attachments/assets/299c75ba-8f7e-4f33-8173-e250d110808e" />
+<br><br>
+<img width="1048" height="506" alt="22" src="https://github.com/user-attachments/assets/1ead305e-3393-4bd3-b115-fec417545484" />
+<br><br>
+
+### Procedures
+פרוצדורה 1: עדכון אוטומטי של כמות אנשים בהזמנה חריגה, נוצרו לנו הרבה הזמנות עם אדם 1 בלבד. הפרוצדורה הזו משתמשת בלולאת FOR (Implicit Cursor) כדי לעבור על כל ההזמנות שבהן מספר האנשים הוא 1, ומעדכנת אותן אוטומטית ל-2 אנשים (ברירת מחדל)
+<br><br>
+<img width="952" height="507" alt="P11" src="https://github.com/user-attachments/assets/c24491d3-7354-4251-acd1-89c88201896c" />
+<br><br>
+<img width="575" height="202" alt="P1" src="https://github.com/user-attachments/assets/6498e76e-b1c2-4c08-900c-353bd289f848" />
+<br><br>
+
