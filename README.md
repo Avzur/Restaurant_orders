@@ -505,3 +505,41 @@ backups files are kept with the date and hour of the backup:
 <img width="575" height="202" alt="P1" src="https://github.com/user-attachments/assets/6498e76e-b1c2-4c08-900c-353bd289f848" />
 <br><br>
 
+פרוצדורה 2: החלת סטטוס קופונים מרוכז לפי ספק
+הפרוצדורה הזו מקבלת מזהה ספק (p_provider_id) וסטטוס חדש (p_new_status, למשל 'A' או 'U'). היא בודקת קודם כל אם הסטטוס חוקי, ואז מעדכנת בבת אחת את כל הקופונים של אותו ספק לסטטוס החדש. אם הסטטוס לא חוקי, היא זורקת Exception.
+
+<br><br>
+<img width="1695" height="960" alt="פרוצ2 לפני" src="https://github.com/user-attachments/assets/096df739-91f5-45e0-843b-4068cdeee135" />
+<br><br>
+<img width="1729" height="972" alt="פרוצ2 הרצה" src="https://github.com/user-attachments/assets/7dd315ba-6c45-46b8-928a-d51ce11ab2a1" />
+<br><br>
+<img width="1705" height="991" alt="פרוצ2 אחרי" src="https://github.com/user-attachments/assets/dd3d2945-c643-44cf-ae6a-bcd2e7139526" />
+<br><br>
+<img width="1781" height="983" alt="פרוצ2 שגיאה" src="https://github.com/user-attachments/assets/9da9ea2f-cd1d-43ef-98d3-5deb123470d6" />
+<br><br>
+
+טריגר 1: הגנה מפני עדכון קופונים שפג תוקפם
+הטריגר יושב על טבלת coupon. ברגע שמישהו מנסה לעדכן קופון ומנסה להפוך את הסטטוס שלו ל-'A' (פעיל), הטריגר מתערב ובודק אם תאריך התפוגה שלו (enddate) כבר עבר. אם התאריך עבר, הטריגר זורק Exceptionוחוסם פיזית את ה-UPDATE כדי לשמור על אמינות הנתונים!
+
+<br><br>
+<img width="1652" height="962" alt="טריגר1" src="https://github.com/user-attachments/assets/2bfa2473-5316-41ae-a522-8d528cc4e5bf" />
+<br><br>
+<img width="1707" height="439" alt="טריגר1 עובד" src="https://github.com/user-attachments/assets/7d3f1cd0-8cbb-4907-a302-e610639d4d4b" />
+<br><br>
+
+טריגר 2: הגבלת כמות אנשים מקסימלית בהזמנה חדשה (בזמן INSERT)
+הטריגר הזה יושב על טבלת reservation (הזמנות). לפני שמתווספת שורה חדשה, הוא מוודא שמספר האנשים הגיוני (למשל, לא הגיוני שקבוצה של יותר מ-30 איש תזמין מקום רגיל בלי תיאום מיוחד). אם המספר גדול מ-30, הטריגר קופץ ומונע את ה-INSERT.
+<br><br>
+<img width="1710" height="1025" alt="טריגר2" src="https://github.com/user-attachments/assets/7a3db75c-6ffc-48f8-9ef9-897a36a21eae" />
+<br><br>
+
+התכנית הראשית הראשונה מזמנת את הפונקציה fn_get_tourist_spending, אשר מחשבת את סך ההוצאות של תייר לפי מזהה התייר, ומדפיסה את התוצאה באמצעות RAISE NOTICE. לאחר מכן התוכנית מזמנת את הפרוצדורה pr_optimize_reservation_people, אשר מעדכנת הזמנות שבהן מספר המשתתפים הוא 1 ומגדילה אותו ל־2. בסיום מוצגת הודעת הצלחה. התוכנית כוללת גם טיפול בחריגות, כך שבמקרה של שגיאה תודפס הודעה מתאימה במקום הפסקה לא מבוקרת של הריצה.
+
+<br><br>
+<img width="1408" height="1027" alt="ראשית1" src="https://github.com/user-attachments/assets/ca162d53-bb97-495a-abae-06f575cdfe81" />
+<br><br>
+
+התכנית הראשית השנייה בתחילת הריצה היא מפעילה את הפונקציה fn_get_provider_coupon_count, אשר סופרת את מספר הקופונים השייכים לספק מסוים ומחזירה את התוצאה. מספר הקופונים מוצג למשתמש באמצעות RAISE NOTICE. לאחר מכן התוכנית מפעילה את הפרוצדורה pr_update_provider_coupon_status, אשר מעדכנת את סטטוס הקופונים של אותו ספק בהתאם לערך שנמסר. בסיום מוצגת הודעת הצלחה. התוכנית כוללת טיפול בחריגות, כך שבמקרה של שגיאה תודפס הודעה מתאימה עם פירוט השגיאה.
+<br><br>
+<img width="1345" height="986" alt="ראשית2" src="https://github.com/user-attachments/assets/03322187-50cb-42e5-9b8a-01c60f024c91" />
+<br><br>
