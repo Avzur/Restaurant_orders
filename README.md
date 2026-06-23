@@ -550,6 +550,9 @@ backups files are kept with the date and hour of the backup:
 
 
 ## Phase 5: Graphical interface
+
+  📜 [View `DineReserve_Manual.pdf`](Phase5/DineReserve_Manual.pdf)
+
 <img width="1595" height="1005" alt="צילום מסך 2026-06-23 140621" src="https://github.com/user-attachments/assets/71aff6b0-3eea-472c-b332-6814b71ad195" />
 <br><br>
 <img width="1602" height="1010" alt="צילום מסך 2026-06-23 140647" src="https://github.com/user-attachments/assets/9c29977c-7c3f-47bc-ae71-e1de468dab63" />
