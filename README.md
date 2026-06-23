@@ -518,6 +518,8 @@ backups files are kept with the date and hour of the backup:
 <img width="1781" height="983" alt="פרוצ2 שגיאה" src="https://github.com/user-attachments/assets/9da9ea2f-cd1d-43ef-98d3-5deb123470d6" />
 <br><br>
 
+
+### Triggers
 טריגר 1: הגנה מפני עדכון קופונים שפג תוקפם
 הטריגר יושב על טבלת coupon. ברגע שמישהו מנסה לעדכן קופון ומנסה להפוך את הסטטוס שלו ל-'A' (פעיל), הטריגר מתערב ובודק אם תאריך התפוגה שלו (enddate) כבר עבר. אם התאריך עבר, הטריגר זורק Exceptionוחוסם פיזית את ה-UPDATE כדי לשמור על אמינות הנתונים!
 
