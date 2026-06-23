@@ -34,7 +34,7 @@ Selected system: Tourist services - restaurant reservations
   * [Procedures](#Procedures)
   * [Triggers](#Triggers)
   * [Main programs](#Main-programs)
-
+* [Phase 5: Graphical interface](#Graphical-interface)
 ## Phase 1: Design and Build the Database
 
 ### Introduction - Screenshots
@@ -543,3 +543,34 @@ backups files are kept with the date and hour of the backup:
 <br><br>
 <img width="1345" height="986" alt="ראשית2" src="https://github.com/user-attachments/assets/03322187-50cb-42e5-9b8a-01c60f024c91" />
 <br><br>
+
+
+## Phase 5: Graphical interface
+<br><br>
+<img width="1595" height="1005" alt="צילום מסך 2026-06-23 140621" src="https://github.com/user-attachments/assets/71aff6b0-3eea-472c-b332-6814b71ad195" />
+<br><br>
+<img width="1602" height="1010" alt="צילום מסך 2026-06-23 140647" src="https://github.com/user-attachments/assets/9c29977c-7c3f-47bc-ae71-e1de468dab63" />
+<br><br>
+<img width="1601" height="1007" alt="צילום מסך 2026-06-23 140713" src="https://github.com/user-attachments/assets/ddbb289d-910c-4116-98ee-640b06e0fa8b" />
+<br><br>
+<img width="1602" height="1006" alt="צילום מסך 2026-06-23 140739" src="https://github.com/user-attachments/assets/f61c4ea6-370c-4de5-838f-44d574574ff6" />
+<br><br>
+<img width="1596" height="1012" alt="צילום מסך 2026-06-23 140813" src="https://github.com/user-attachments/assets/cd19a047-68d9-445c-981a-908874c85233" />
+<br><br>
+<img width="1602" height="1007" alt="צילום מסך 2026-06-23 140849" src="https://github.com/user-attachments/assets/96dd13ad-02b8-4b14-959e-9971b71050a1" />
+<br><br>
+<img width="1597" height="1012" alt="צילום מסך 2026-06-23 140913" src="https://github.com/user-attachments/assets/b766a692-b06c-41aa-ac4b-d7b451c02c47" />
+<br><br>
+<img width="1602" height="1002" alt="צילום מסך 2026-06-23 140938" src="https://github.com/user-attachments/assets/14af9ff2-f0fd-4263-aadf-b8d4fc874818" />
+<br><br>
+<img width="1591" height="1007" alt="צילום מסך 2026-06-23 143319" src="https://github.com/user-attachments/assets/0273e7cf-8fe6-467e-835b-4d2d78318cc2" />
+<br><br>
+<img width="1597" height="1011" alt="צילום מסך 2026-06-23 143405" src="https://github.com/user-attachments/assets/0c58486b-f27f-424e-ba68-02a191e9cca2" />
+<br><br>
+<img width="1596" height="1010" alt="צילום מסך 2026-06-23 143438" src="https://github.com/user-attachments/assets/3b206dff-f9fb-4862-9d99-b7eda7f13b04" />
+<br><br>
+<img width="1600" height="1012" alt="צילום מסך 2026-06-23 143506" src="https://github.com/user-attachments/assets/19bbb0bf-1180-4d0c-bb8f-810385728b3c" />
+<br><br>
+<img width="1597" height="1002" alt="צילום מסך 2026-06-23 140555" src="https://github.com/user-attachments/assets/1f017419-1663-42ab-a858-098b32657410" />
+<br><br>
+
