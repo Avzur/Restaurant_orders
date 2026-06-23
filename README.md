@@ -535,6 +535,8 @@ backups files are kept with the date and hour of the backup:
 <img width="1710" height="1025" alt="טריגר2" src="https://github.com/user-attachments/assets/7a3db75c-6ffc-48f8-9ef9-897a36a21eae" />
 <br><br>
 
+
+### Main programs
 התכנית הראשית הראשונה מזמנת את הפונקציה fn_get_tourist_spending, אשר מחשבת את סך ההוצאות של תייר לפי מזהה התייר, ומדפיסה את התוצאה באמצעות RAISE NOTICE. לאחר מכן התוכנית מזמנת את הפרוצדורה pr_optimize_reservation_people, אשר מעדכנת הזמנות שבהן מספר המשתתפים הוא 1 ומגדילה אותו ל־2. בסיום מוצגת הודעת הצלחה. התוכנית כוללת גם טיפול בחריגות, כך שבמקרה של שגיאה תודפס הודעה מתאימה במקום הפסקה לא מבוקרת של הריצה.
 
 <br><br>
@@ -548,7 +550,6 @@ backups files are kept with the date and hour of the backup:
 
 
 ## Phase 5: Graphical interface
-<br><br>
 <img width="1595" height="1005" alt="צילום מסך 2026-06-23 140621" src="https://github.com/user-attachments/assets/71aff6b0-3eea-472c-b332-6814b71ad195" />
 <br><br>
 <img width="1602" height="1010" alt="צילום מסך 2026-06-23 140647" src="https://github.com/user-attachments/assets/9c29977c-7c3f-47bc-ae71-e1de468dab63" />
